@@ -1,0 +1,304 @@
+---
+import Cpp from './icons/programming-languages/cpp.astro';
+import Dotnet from './icons/programming-languages/dotnet.astro';
+import Go from './icons/programming-languages/go.astro';
+import Java from './icons/programming-languages/java.astro';
+import Javascript from './icons/programming-languages/javascript.astro';
+import Python from './icons/programming-languages/python.astro';
+import Rust from './icons/programming-languages/rust.astro';
+import Swift from './icons/programming-languages/swift.astro';
+import Typescript from './icons/programming-languages/typescript.astro';
+---
+
+<div class="floating-languages-container">
+  <div class="bubble bubble-1" data-vx="0.5" data-vy="0.3">
+    <Javascript class="icon" />
+  </div>
+  <div class="bubble bubble-2" data-vx="-0.4" data-vy="0.6">
+    <Python class="icon" />
+  </div>
+  <div class="bubble bubble-3" data-vx="0.6" data-vy="-0.4">
+    <Typescript class="icon" />
+  </div>
+  <div class="bubble bubble-4" data-vx="-0.5" data-vy="-0.5">
+    <Rust class="icon" />
+  </div>
+  <div class="bubble bubble-5" data-vx="0.4" data-vy="0.5">
+    <Cpp class="icon" />
+  </div>
+  <div class="bubble bubble-6" data-vx="-0.6" data-vy="0.4">
+    <Java class="icon" />
+  </div>
+  <div class="bubble bubble-7" data-vx="0.3" data-vy="-0.6">
+    <Go class="icon" />
+  </div>
+  <div class="bubble bubble-8" data-vx="-0.3" data-vy="0.5">
+    <Swift class="icon" />
+  </div>
+  <div class="bubble bubble-9" data-vx="0.5" data-vy="-0.3">
+    <Dotnet class="icon" />
+  </div>
+</div>
+
+<style>
+  .floating-languages-container {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 5;
+  }
+
+  .bubble {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    backdrop-filter: blur(8px);
+    background: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+  }
+
+  .bubble:hover {
+    transform: scale(1.1);
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  .bubble :global(.icon) {
+    width: 100%;
+    height: 100%;
+    padding: 20%;
+    opacity: 0.7;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+  }
+
+  /* Tamaños y posiciones iniciales */
+  .bubble-1 {
+    width: 80px;
+    height: 80px;
+    top: 15%;
+    left: 10%;
+  }
+
+  .bubble-2 {
+    width: 100px;
+    height: 100px;
+    top: 60%;
+    left: 8%;
+  }
+
+  .bubble-3 {
+    width: 90px;
+    height: 90px;
+    top: 25%;
+    left: 85%;
+  }
+
+  .bubble-4 {
+    width: 70px;
+    height: 70px;
+    top: 70%;
+    left: 88%;
+  }
+
+  .bubble-5 {
+    width: 85px;
+    height: 85px;
+    top: 45%;
+    left: 5%;
+  }
+
+  .bubble-6 {
+    width: 95px;
+    height: 95px;
+    top: 10%;
+    left: 50%;
+  }
+
+  .bubble-7 {
+    width: 75px;
+    height: 75px;
+    top: 80%;
+    left: 50%;
+  }
+
+  .bubble-8 {
+    width: 88px;
+    height: 88px;
+    top: 35%;
+    left: 92%;
+  }
+
+  .bubble-9 {
+    width: 92px;
+    height: 92px;
+    top: 75%;
+    left: 15%;
+  }
+
+  /* Animación de flotación suave */
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+      transform: translateY(-20px) rotate(5deg);
+    }
+  }
+
+  .bubble {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .bubble-1 { animation-delay: 0s; animation-duration: 7s; }
+  .bubble-2 { animation-delay: 0.5s; animation-duration: 6.5s; }
+  .bubble-3 { animation-delay: 1s; animation-duration: 8s; }
+  .bubble-4 { animation-delay: 1.5s; animation-duration: 7.5s; }
+  .bubble-5 { animation-delay: 2s; animation-duration: 6s; }
+  .bubble-6 { animation-delay: 2.5s; animation-duration: 7.2s; }
+  .bubble-7 { animation-delay: 3s; animation-duration: 6.8s; }
+  .bubble-8 { animation-delay: 3.5s; animation-duration: 7.8s; }
+  .bubble-9 { animation-delay: 4s; animation-duration: 6.3s; }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .bubble {
+      width: 60px !important;
+      height: 60px !important;
+    }
+
+    .bubble-3, .bubble-4, .bubble-8 {
+      display: none;
+    }
+  }
+</style>
+
+<script>
+  class BubblePhysics {
+    private bubbles: HTMLElement[] = [];
+    private velocities: Map<HTMLElement, { vx: number; vy: number }> = new Map();
+    private container: HTMLElement | null = null;
+    private animationId: number | null = null;
+
+    init() {
+      this.container = document.querySelector('.floating-languages-container');
+      if (!this.container) return;
+
+      this.bubbles = Array.from(this.container.querySelectorAll('.bubble'));
+
+      // Inicializar velocidades
+      this.bubbles.forEach((bubble) => {
+        const vx = parseFloat(bubble.getAttribute('data-vx') || '0');
+        const vy = parseFloat(bubble.getAttribute('data-vy') || '0');
+        this.velocities.set(bubble, { vx, vy });
+      });
+
+      this.animate();
+    }
+
+    private animate = () => {
+      this.updatePositions();
+      this.checkCollisions();
+      this.animationId = requestAnimationFrame(this.animate);
+    };
+
+    private updatePositions() {
+      if (!this.container) return;
+
+      const containerRect = this.container.getBoundingClientRect();
+
+      this.bubbles.forEach((bubble) => {
+        const velocity = this.velocities.get(bubble);
+        if (!velocity) return;
+
+        const rect = bubble.getBoundingClientRect();
+        const currentLeft = parseFloat(getComputedStyle(bubble).left) || 0;
+        const currentTop = parseFloat(getComputedStyle(bubble).top) || 0;
+
+        let newLeft = currentLeft + velocity.vx;
+        let newTop = currentTop + velocity.vy;
+
+        // Colisión con bordes
+        if (newLeft <= 0 || newLeft + rect.width >= containerRect.width) {
+          velocity.vx *= -1;
+          newLeft = Math.max(0, Math.min(newLeft, containerRect.width - rect.width));
+        }
+
+        if (newTop <= 0 || newTop + rect.height >= containerRect.height) {
+          velocity.vy *= -1;
+          newTop = Math.max(0, Math.min(newTop, containerRect.height - rect.height));
+        }
+
+        bubble.style.left = `${newLeft}px`;
+        bubble.style.top = `${newTop}px`;
+      });
+    }
+
+    private checkCollisions() {
+      for (let i = 0; i < this.bubbles.length; i++) {
+        for (let j = i + 1; j < this.bubbles.length; j++) {
+          const bubble1 = this.bubbles[i];
+          const bubble2 = this.bubbles[j];
+
+          const rect1 = bubble1.getBoundingClientRect();
+          const rect2 = bubble2.getBoundingClientRect();
+
+          const dx = (rect1.left + rect1.width / 2) - (rect2.left + rect2.width / 2);
+          const dy = (rect1.top + rect1.height / 2) - (rect2.top + rect2.height / 2);
+          const distance = Math.sqrt(dx * dx + dy * dy);
+          const minDistance = (rect1.width + rect2.width) / 2;
+
+          if (distance < minDistance) {
+            // Colisión detectada
+            const vel1 = this.velocities.get(bubble1)!;
+            const vel2 = this.velocities.get(bubble2)!;
+
+            // Intercambiar velocidades (colisión elástica simplificada)
+            const tempVx = vel1.vx;
+            const tempVy = vel1.vy;
+            vel1.vx = vel2.vx;
+            vel1.vy = vel2.vy;
+            vel2.vx = tempVx;
+            vel2.vy = tempVy;
+
+            // Separar burbujas para evitar superposición
+            const overlap = minDistance - distance;
+            const angle = Math.atan2(dy, dx);
+            const moveX = Math.cos(angle) * overlap / 2;
+            const moveY = Math.sin(angle) * overlap / 2;
+
+            const left1 = parseFloat(bubble1.style.left || '0');
+            const top1 = parseFloat(bubble1.style.top || '0');
+            const left2 = parseFloat(bubble2.style.left || '0');
+            const top2 = parseFloat(bubble2.style.top || '0');
+
+            bubble1.style.left = `${left1 + moveX}px`;
+            bubble1.style.top = `${top1 + moveY}px`;
+            bubble2.style.left = `${left2 - moveX}px`;
+            bubble2.style.top = `${top2 - moveY}px`;
+          }
+        }
+      }
+    }
+
+    destroy() {
+      if (this.animationId) {
+        cancelAnimationFrame(this.animationId);
+      }
+    }
+  }
+
+  // Inicializar
+  const physics = new BubblePhysics();
+
+  document.addEventListener('DOMContentLoaded', () => {
+    physics.init();
+  });
+
+  // Limpiar al salir
+  document.addEventListener('astro:before-swap', () => {
+    physics.destroy();
+  });
+</script>
