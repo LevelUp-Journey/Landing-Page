@@ -1,0 +1,33 @@
+---
+import SectionTitle from './SectionTitle.astro';
+import FeatureCard2 from './FeatureCard.astro';
+---
+
+<section class="bg-neutral-900 py-20">
+  <div class="container mx-auto px-6">
+    <SectionTitle
+      title="Unlock your coding abilities"
+      subtitle="Boost your skills and secure the foundations of your future career."
+    />
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <FeatureCard2
+        icon="/assets/section2/icons/code-2.png"
+        title="Real time code editor"
+        description="Write, run, and prove your code instantly—no setup required. Everything happens in the browser, so you can focus on solving problems, not configuring tools."
+      />
+
+      <FeatureCard2
+        icon="/assets/section2/icons/calendar-check.png"
+        title="Weekly challenges"
+        description="Sharpen your abilities with fresh challenges every week. Tackle real-world problems, compete with peers, and steadily build your coding confidence."
+      />
+
+      <FeatureCard2
+        icon="/assets/section2/icons/hammer.png"
+        title="Instant feedback"
+        description="Submit your solution and see the results right away. Learn from mistakes, improve faster, and keep pushing your skills to the next level."
+      />
+    </div>
+  </div>
+</section>
