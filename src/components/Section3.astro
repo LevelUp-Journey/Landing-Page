@@ -1,69 +1,13 @@
 ---
-import SectionTitle from './SectionTitle.astro';
-import LeaderboardCard from './LeaderboardCard.astro';
+import LeaderboardTable from './LeaderboardTable.astro';
 ---
 
-<section class="py-20 px-6 bg-neutral-950">
-  <div class="max-w-7xl mx-auto">
+<section class="section bg-neutral-950">
+  <div class="container-custom">
     <div class="grid lg:grid-cols-2 gap-12 items-center">
       <!-- Leaderboard Table -->
       <div class="order-2 lg:order-1">
-        <div class="bg-neutral-900 rounded-lg border border-[#FFFFFF] overflow-hidden">
-          <table class="w-full">
-            <thead>
-              <tr class="bg-neutral-800 border-b border-[#FFFFFF]">
-                <th class="py-4 px-6 text-left text-sm font-semibold text-gray-300">Rank</th>
-                <th class="py-4 px-6 text-left text-sm font-semibold text-gray-300">User</th>
-                <th class="py-4 px-6 text-center text-sm font-semibold text-gray-300">Score</th>
-                <th class="py-4 px-6 text-center text-sm font-semibold text-gray-300">Retos completados</th>
-              </tr>
-            </thead>
-            <tbody>
-              <LeaderboardCard
-                rank={1}
-                user="Sideral"
-                score={985}
-                challenges={121}
-                rankIcon="/assets/section3/ranks/7-GrandMaster.png"
-              />
-              <LeaderboardCard
-                rank={2}
-                user="Bebote"
-                score={902}
-                challenges={112}
-                rankIcon="/assets/section3/ranks/6-Master.png"
-              />
-              <LeaderboardCard
-                rank={3}
-                user="Patitoo"
-                score={879}
-                challenges={100}
-                rankIcon="/assets/section3/ranks/5-Diamond.png"
-              />
-              <LeaderboardCard
-                rank={4}
-                user="Marina"
-                score={800}
-                challenges={87}
-                rankIcon="/assets/section3/ranks/4-Platinium.png"
-              />
-              <LeaderboardCard
-                rank={5}
-                user="Pekass"
-                score={798}
-                challenges={86}
-                rankIcon="/assets/section3/ranks/3-Gold.png"
-              />
-              <LeaderboardCard
-                rank={6}
-                user="User26"
-                score={690}
-                challenges={67}
-                rankIcon="/assets/section3/ranks/2-Silver.png"
-              />
-            </tbody>
-          </table>
-        </div>
+        <LeaderboardTable />
       </div>
 
       <!-- Text Content -->
