@@ -1,0 +1,43 @@
+---
+// Header component
+---
+
+<header class="bg-neutral-900 border-b border-neutral-800">
+  <div class="container mx-auto px-6 py-4">
+    <div class="flex items-center justify-between">
+      <!-- Logo y título -->
+      <div class="flex items-center gap-3">
+        <img
+          src="/assets/header/header-title.png"
+          alt="Level Up Journey"
+          class="h-8"
+        />
+      </div>
+
+      <!-- Iconos de navegación -->
+      <div class="flex items-center gap-6">
+        <button
+          class="hover:opacity-80 transition-opacity"
+          aria-label="Cambiar idioma"
+        >
+          <img
+            src="/assets/header/i18n.png"
+            alt="Idioma"
+            class="w-6 h-6"
+          />
+        </button>
+
+        <button
+          class="hover:opacity-80 transition-opacity"
+          aria-label="Cuenta de usuario"
+        >
+          <img
+            src="/assets/header/account.png"
+            alt="Cuenta"
+            class="w-6 h-6"
+          />
+        </button>
+      </div>
+    </div>
+  </div>
+</header>
