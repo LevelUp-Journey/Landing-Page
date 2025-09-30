@@ -10,35 +10,37 @@ import Swift from './icons/programming-languages/swift.astro';
 import Typescript from './icons/programming-languages/typescript.astro';
 ---
 
-<div class="floating-languages-container">
-  <div class="bubble bubble-1" data-vx="0.5" data-vy="0.3">
+<div class="floating-languages-container" id="floating-container"></div>
+
+<template id="bubble-templates">
+  <div class="bubble-template" data-lang="javascript">
     <Javascript class="icon" />
   </div>
-  <div class="bubble bubble-2" data-vx="-0.4" data-vy="0.6">
+  <div class="bubble-template" data-lang="python">
     <Python class="icon" />
   </div>
-  <div class="bubble bubble-3" data-vx="0.6" data-vy="-0.4">
+  <div class="bubble-template" data-lang="typescript">
     <Typescript class="icon" />
   </div>
-  <div class="bubble bubble-4" data-vx="-0.5" data-vy="-0.5">
+  <div class="bubble-template" data-lang="rust">
     <Rust class="icon" />
   </div>
-  <div class="bubble bubble-5" data-vx="0.4" data-vy="0.5">
+  <div class="bubble-template" data-lang="cpp">
     <Cpp class="icon" />
   </div>
-  <div class="bubble bubble-6" data-vx="-0.6" data-vy="0.4">
+  <div class="bubble-template" data-lang="java">
     <Java class="icon" />
   </div>
-  <div class="bubble bubble-7" data-vx="0.3" data-vy="-0.6">
+  <div class="bubble-template" data-lang="go">
     <Go class="icon" />
   </div>
-  <div class="bubble bubble-8" data-vx="-0.3" data-vy="0.5">
+  <div class="bubble-template" data-lang="swift">
     <Swift class="icon" />
   </div>
-  <div class="bubble bubble-9" data-vx="0.5" data-vy="-0.3">
+  <div class="bubble-template" data-lang="dotnet">
     <Dotnet class="icon" />
   </div>
-</div>
+</template>
 
 <style>
   .floating-languages-container {
@@ -54,123 +56,38 @@ import Typescript from './icons/programming-languages/typescript.astro';
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 50%;
-    backdrop-filter: blur(8px);
-    background: rgba(255, 255, 255, 0.05);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
+    transition: transform 0.2s ease;
   }
 
   .bubble:hover {
-    transform: scale(1.1);
-    background: rgba(255, 255, 255, 0.1);
+    transform: scale(1.15);
   }
 
   .bubble :global(.icon) {
     width: 100%;
     height: 100%;
-    padding: 20%;
-    opacity: 0.7;
-    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+    opacity: 0.5;
+    filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.5));
   }
 
-  /* Tamaños y posiciones iniciales */
-  .bubble-1 {
-    width: 80px;
-    height: 80px;
-    top: 15%;
-    left: 10%;
-  }
-
-  .bubble-2 {
-    width: 100px;
-    height: 100px;
-    top: 60%;
-    left: 8%;
-  }
-
-  .bubble-3 {
-    width: 90px;
-    height: 90px;
-    top: 25%;
-    left: 85%;
-  }
-
-  .bubble-4 {
-    width: 70px;
-    height: 70px;
-    top: 70%;
-    left: 88%;
-  }
-
-  .bubble-5 {
-    width: 85px;
-    height: 85px;
-    top: 45%;
-    left: 5%;
-  }
-
-  .bubble-6 {
-    width: 95px;
-    height: 95px;
-    top: 10%;
-    left: 50%;
-  }
-
-  .bubble-7 {
-    width: 75px;
-    height: 75px;
-    top: 80%;
-    left: 50%;
-  }
-
-  .bubble-8 {
-    width: 88px;
-    height: 88px;
-    top: 35%;
-    left: 92%;
-  }
-
-  .bubble-9 {
-    width: 92px;
-    height: 92px;
-    top: 75%;
-    left: 15%;
-  }
-
-  /* Animación de flotación suave */
-  @keyframes float {
-    0%, 100% {
-      transform: translateY(0px) rotate(0deg);
-    }
-    50% {
-      transform: translateY(-20px) rotate(5deg);
-    }
-  }
-
+  /* Tamaños más pequeños */
   .bubble {
-    animation: float 6s ease-in-out infinite;
+    width: 55px;
+    height: 55px;
   }
-
-  .bubble-1 { animation-delay: 0s; animation-duration: 7s; }
-  .bubble-2 { animation-delay: 0.5s; animation-duration: 6.5s; }
-  .bubble-3 { animation-delay: 1s; animation-duration: 8s; }
-  .bubble-4 { animation-delay: 1.5s; animation-duration: 7.5s; }
-  .bubble-5 { animation-delay: 2s; animation-duration: 6s; }
-  .bubble-6 { animation-delay: 2.5s; animation-duration: 7.2s; }
-  .bubble-7 { animation-delay: 3s; animation-duration: 6.8s; }
-  .bubble-8 { animation-delay: 3.5s; animation-duration: 7.8s; }
-  .bubble-9 { animation-delay: 4s; animation-duration: 6.3s; }
 
   /* Responsive */
   @media (max-width: 768px) {
     .bubble {
-      width: 60px !important;
-      height: 60px !important;
+      width: 40px !important;
+      height: 40px !important;
     }
+  }
 
-    .bubble-3, .bubble-4, .bubble-8 {
-      display: none;
+  @media (max-width: 480px) {
+    .bubble {
+      width: 35px !important;
+      height: 35px !important;
     }
   }
 </style>
@@ -181,21 +98,195 @@ import Typescript from './icons/programming-languages/typescript.astro';
     private velocities: Map<HTMLElement, { vx: number; vy: number }> = new Map();
     private container: HTMLElement | null = null;
     private animationId: number | null = null;
+    private readonly MIN_BUBBLES = 13;
+    private readonly MAX_BUBBLES = 20;
+    private initialized = false;
+    private resizeTimeout: number | null = null;
+    private readonly STORAGE_KEY = 'floating-bubbles-state';
 
     init() {
-      this.container = document.querySelector('.floating-languages-container');
-      if (!this.container) return;
+      this.container = document.getElementById('floating-container');
+      if (!this.container || this.initialized) return;
 
-      this.bubbles = Array.from(this.container.querySelectorAll('.bubble'));
-
-      // Inicializar velocidades
-      this.bubbles.forEach((bubble) => {
-        const vx = parseFloat(bubble.getAttribute('data-vx') || '0');
-        const vy = parseFloat(bubble.getAttribute('data-vy') || '0');
-        this.velocities.set(bubble, { vx, vy });
-      });
+      // Intentar restaurar estado previo
+      const savedState = this.loadState();
+      if (savedState) {
+        this.restoreState(savedState);
+      } else {
+        this.createBubbles();
+      }
 
       this.animate();
+      this.initialized = true;
+
+      // Listener para resize con debounce
+      window.addEventListener('resize', this.handleResize);
+
+      // Guardar estado periódicamente
+      setInterval(() => this.saveState(), 1000);
+    }
+
+    private handleResize = () => {
+      if (this.resizeTimeout) {
+        clearTimeout(this.resizeTimeout);
+      }
+
+      // Debounce para evitar llamadas excesivas
+      this.resizeTimeout = window.setTimeout(() => {
+        this.adjustBubblesForScreenSize();
+        this.adjustBubblesPosition();
+      }, 100);
+    };
+
+    private createBubbles() {
+      if (!this.container) return;
+
+      const template = document.getElementById('bubble-templates') as HTMLTemplateElement;
+      if (!template) return;
+
+      const templates = Array.from(template.content.querySelectorAll('.bubble-template'));
+      const containerRect = this.container.getBoundingClientRect();
+
+      // Determinar cantidad de burbujas según tamaño de pantalla
+      let targetCount = this.MIN_BUBBLES;
+      if (window.innerWidth > 1024) {
+        targetCount = this.MAX_BUBBLES;
+      } else if (window.innerWidth > 768) {
+        targetCount = Math.floor((this.MIN_BUBBLES + this.MAX_BUBBLES) / 2);
+      }
+
+      // Crear burbujas duplicando templates si es necesario
+      const bubblesNeeded = targetCount;
+      for (let i = 0; i < bubblesNeeded; i++) {
+        const templateIndex = i % templates.length;
+        const templateNode = templates[templateIndex];
+        const bubble = templateNode.cloneNode(true) as HTMLElement;
+
+        bubble.classList.remove('bubble-template');
+        bubble.classList.add('bubble');
+
+        // Mantener atributo data-lang
+        const lang = templateNode.getAttribute('data-lang');
+        if (lang) {
+          bubble.setAttribute('data-lang', lang);
+        }
+
+        // Posición aleatoria inicial
+        const maxX = containerRect.width - 55;
+        const maxY = containerRect.height - 55;
+        const randomX = Math.random() * maxX;
+        const randomY = Math.random() * maxY;
+
+        bubble.style.left = `${randomX}px`;
+        bubble.style.top = `${randomY}px`;
+
+        // Velocidad aleatoria más lenta
+        const speed = 0.15 + Math.random() * 0.15; // 0.15 a 0.3 (más lento)
+        const angle = Math.random() * Math.PI * 2;
+        const vx = Math.cos(angle) * speed;
+        const vy = Math.sin(angle) * speed;
+
+        this.velocities.set(bubble, { vx, vy });
+        this.container!.appendChild(bubble);
+        this.bubbles.push(bubble);
+      }
+    }
+
+    private adjustBubblesForScreenSize() {
+      if (!this.container) return;
+
+      // Determinar cantidad objetivo según pantalla
+      let targetCount = this.MIN_BUBBLES;
+      if (window.innerWidth > 1024) {
+        targetCount = this.MAX_BUBBLES;
+      } else if (window.innerWidth > 768) {
+        targetCount = Math.floor((this.MIN_BUBBLES + this.MAX_BUBBLES) / 2);
+      }
+
+      const currentCount = this.bubbles.length;
+
+      if (currentCount < targetCount) {
+        // Agregar burbujas
+        const template = document.getElementById('bubble-templates') as HTMLTemplateElement;
+        if (!template) return;
+        const templates = Array.from(template.content.querySelectorAll('.bubble-template'));
+        const containerRect = this.container.getBoundingClientRect();
+
+        for (let i = currentCount; i < targetCount; i++) {
+          const templateIndex = i % templates.length;
+          const templateNode = templates[templateIndex];
+          const bubble = templateNode.cloneNode(true) as HTMLElement;
+
+          bubble.classList.remove('bubble-template');
+          bubble.classList.add('bubble');
+
+          // Mantener atributo data-lang
+          const lang = templateNode.getAttribute('data-lang');
+          if (lang) {
+            bubble.setAttribute('data-lang', lang);
+          }
+
+          const maxX = containerRect.width - 55;
+          const maxY = containerRect.height - 55;
+          bubble.style.left = `${Math.random() * maxX}px`;
+          bubble.style.top = `${Math.random() * maxY}px`;
+
+          const speed = 0.15 + Math.random() * 0.15;
+          const angle = Math.random() * Math.PI * 2;
+          this.velocities.set(bubble, {
+            vx: Math.cos(angle) * speed,
+            vy: Math.sin(angle) * speed
+          });
+
+          this.container!.appendChild(bubble);
+          this.bubbles.push(bubble);
+        }
+      } else if (currentCount > targetCount) {
+        // Remover burbujas
+        const toRemove = currentCount - targetCount;
+        for (let i = 0; i < toRemove; i++) {
+          const bubble = this.bubbles.pop();
+          if (bubble) {
+            this.velocities.delete(bubble);
+            bubble.remove();
+          }
+        }
+      }
+    }
+
+    private adjustBubblesPosition() {
+      if (!this.container) return;
+
+      const containerRect = this.container.getBoundingClientRect();
+
+      // Ajustar posiciones de burbujas que están fuera de los límites
+      this.bubbles.forEach((bubble) => {
+        const rect = bubble.getBoundingClientRect();
+        const currentLeft = rect.left - containerRect.left;
+        const currentTop = rect.top - containerRect.top;
+
+        let newLeft = currentLeft;
+        let newTop = currentTop;
+
+        // Si la burbuja está fuera de los límites, ajustarla dentro
+        if (currentLeft < 0) {
+          newLeft = 0;
+        } else if (currentLeft + rect.width > containerRect.width) {
+          newLeft = containerRect.width - rect.width;
+        }
+
+        if (currentTop < 0) {
+          newTop = 0;
+        } else if (currentTop + rect.height > containerRect.height) {
+          newTop = containerRect.height - rect.height;
+        }
+
+        // Solo actualizar si cambió
+        if (newLeft !== currentLeft || newTop !== currentTop) {
+          bubble.style.left = `${newLeft}px`;
+          bubble.style.top = `${newTop}px`;
+        }
+      });
     }
 
     private animate = () => {
@@ -214,8 +305,11 @@ import Typescript from './icons/programming-languages/typescript.astro';
         if (!velocity) return;
 
         const rect = bubble.getBoundingClientRect();
-        const currentLeft = parseFloat(getComputedStyle(bubble).left) || 0;
-        const currentTop = parseFloat(getComputedStyle(bubble).top) || 0;
+        const containerLeft = containerRect.left;
+        const containerTop = containerRect.top;
+
+        const currentLeft = rect.left - containerLeft;
+        const currentTop = rect.top - containerTop;
 
         let newLeft = currentLeft + velocity.vx;
         let newTop = currentTop + velocity.vy;
@@ -251,11 +345,9 @@ import Typescript from './icons/programming-languages/typescript.astro';
           const minDistance = (rect1.width + rect2.width) / 2;
 
           if (distance < minDistance) {
-            // Colisión detectada
             const vel1 = this.velocities.get(bubble1)!;
             const vel2 = this.velocities.get(bubble2)!;
 
-            // Intercambiar velocidades (colisión elástica simplificada)
             const tempVx = vel1.vx;
             const tempVy = vel1.vy;
             vel1.vx = vel2.vx;
@@ -263,16 +355,16 @@ import Typescript from './icons/programming-languages/typescript.astro';
             vel2.vx = tempVx;
             vel2.vy = tempVy;
 
-            // Separar burbujas para evitar superposición
             const overlap = minDistance - distance;
             const angle = Math.atan2(dy, dx);
             const moveX = Math.cos(angle) * overlap / 2;
             const moveY = Math.sin(angle) * overlap / 2;
 
-            const left1 = parseFloat(bubble1.style.left || '0');
-            const top1 = parseFloat(bubble1.style.top || '0');
-            const left2 = parseFloat(bubble2.style.left || '0');
-            const top2 = parseFloat(bubble2.style.top || '0');
+            const containerRect = this.container!.getBoundingClientRect();
+            const left1 = rect1.left - containerRect.left;
+            const top1 = rect1.top - containerRect.top;
+            const left2 = rect2.left - containerRect.left;
+            const top2 = rect2.top - containerRect.top;
 
             bubble1.style.left = `${left1 + moveX}px`;
             bubble1.style.top = `${top1 + moveY}px`;
@@ -283,21 +375,99 @@ import Typescript from './icons/programming-languages/typescript.astro';
       }
     }
 
+    private saveState() {
+      if (!this.container) return;
+
+      const state = {
+        bubbles: this.bubbles.map((bubble) => {
+          const velocity = this.velocities.get(bubble);
+          const lang = bubble.getAttribute('data-lang') || bubble.querySelector('.bubble-template')?.getAttribute('data-lang');
+          return {
+            lang,
+            left: bubble.style.left,
+            top: bubble.style.top,
+            vx: velocity?.vx || 0,
+            vy: velocity?.vy || 0
+          };
+        }),
+        timestamp: Date.now()
+      };
+
+      try {
+        sessionStorage.setItem(this.STORAGE_KEY, JSON.stringify(state));
+      } catch (e) {
+        // Ignorar errores de storage
+      }
+    }
+
+    private loadState() {
+      try {
+        const stored = sessionStorage.getItem(this.STORAGE_KEY);
+        if (!stored) return null;
+
+        const state = JSON.parse(stored);
+
+        // Expirar estado después de 5 minutos
+        if (Date.now() - state.timestamp > 5 * 60 * 1000) {
+          sessionStorage.removeItem(this.STORAGE_KEY);
+          return null;
+        }
+
+        return state;
+      } catch (e) {
+        return null;
+      }
+    }
+
+    private restoreState(state: any) {
+      if (!this.container) return;
+
+      const template = document.getElementById('bubble-templates') as HTMLTemplateElement;
+      if (!template) return;
+
+      const templates = Array.from(template.content.querySelectorAll('.bubble-template'));
+
+      state.bubbles.forEach((bubbleData: any) => {
+        const templateNode = templates.find(t => t.getAttribute('data-lang') === bubbleData.lang);
+        if (!templateNode) return;
+
+        const bubble = templateNode.cloneNode(true) as HTMLElement;
+        bubble.classList.remove('bubble-template');
+        bubble.classList.add('bubble');
+        bubble.setAttribute('data-lang', bubbleData.lang);
+
+        bubble.style.left = bubbleData.left;
+        bubble.style.top = bubbleData.top;
+
+        this.velocities.set(bubble, {
+          vx: bubbleData.vx,
+          vy: bubbleData.vy
+        });
+
+        this.container!.appendChild(bubble);
+        this.bubbles.push(bubble);
+      });
+    }
+
     destroy() {
+      this.saveState();
+
       if (this.animationId) {
         cancelAnimationFrame(this.animationId);
       }
+      if (this.resizeTimeout) {
+        clearTimeout(this.resizeTimeout);
+      }
+      window.removeEventListener('resize', this.handleResize);
     }
   }
 
-  // Inicializar
   const physics = new BubblePhysics();
 
   document.addEventListener('DOMContentLoaded', () => {
     physics.init();
   });
 
-  // Limpiar al salir
   document.addEventListener('astro:before-swap', () => {
     physics.destroy();
   });
