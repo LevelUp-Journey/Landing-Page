@@ -1,0 +1,87 @@
+---
+import SectionTitle from './SectionTitle.astro';
+import LeaderboardCard from './LeaderboardCard.astro';
+---
+
+<section class="py-20 px-6 bg-neutral-950">
+  <div class="max-w-7xl mx-auto">
+    <div class="grid lg:grid-cols-2 gap-12 items-center">
+      <!-- Leaderboard Table -->
+      <div class="order-2 lg:order-1">
+        <div class="bg-neutral-900 rounded-lg border border-[#FFFFFF] overflow-hidden">
+          <table class="w-full">
+            <thead>
+              <tr class="bg-neutral-800 border-b border-[#FFFFFF]">
+                <th class="py-4 px-6 text-left text-sm font-semibold text-gray-300">Rank</th>
+                <th class="py-4 px-6 text-left text-sm font-semibold text-gray-300">User</th>
+                <th class="py-4 px-6 text-center text-sm font-semibold text-gray-300">Score</th>
+                <th class="py-4 px-6 text-center text-sm font-semibold text-gray-300">Retos completados</th>
+              </tr>
+            </thead>
+            <tbody>
+              <LeaderboardCard
+                rank={1}
+                user="Sideral"
+                score={985}
+                challenges={121}
+                rankIcon="/assets/section3/ranks/7-GrandMaster.png"
+              />
+              <LeaderboardCard
+                rank={2}
+                user="Bebote"
+                score={902}
+                challenges={112}
+                rankIcon="/assets/section3/ranks/6-Master.png"
+              />
+              <LeaderboardCard
+                rank={3}
+                user="Patitoo"
+                score={879}
+                challenges={100}
+                rankIcon="/assets/section3/ranks/5-Diamond.png"
+              />
+              <LeaderboardCard
+                rank={4}
+                user="Marina"
+                score={800}
+                challenges={87}
+                rankIcon="/assets/section3/ranks/4-Platinium.png"
+              />
+              <LeaderboardCard
+                rank={5}
+                user="Pekass"
+                score={798}
+                challenges={86}
+                rankIcon="/assets/section3/ranks/3-Gold.png"
+              />
+              <LeaderboardCard
+                rank={6}
+                user="User26"
+                score={690}
+                challenges={67}
+                rankIcon="/assets/section3/ranks/2-Silver.png"
+              />
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Text Content -->
+      <div class="order-1 lg:order-2 text-center flex flex-col justify-center h-full">
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
+          Compete. Rank. Shine.
+        </h2>
+        <h3 class="text-xl font-semibold text-gray-300 mb-5">
+          Challenge your peers. Climb the ranks.
+        </h3>
+        <p class="text-white leading-relaxed text-sm max-w-2xl mx-auto">
+          Join a community of students who share your passion for programming.
+          Each coding challenge is a chance to test your problem-solving skills,
+          earn points, and see how you stack up against others. With every victory,
+          you move higher on the leaderboard—driven by competition, collaboration,
+          and the pursuit of mastery.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
