@@ -10,14 +10,14 @@ interface Props {
 const { rank, user, score, challenges, rankIcon } = Astro.props;
 ---
 
-<tr class="border-b border-[#FFFFFF] hover:bg-gradient-to-r hover:from-purple-900/20 hover:to-blue-900/20 transition-all duration-300 ease-in-out hover:scale-[1.01] hover:shadow-lg hover:shadow-purple-500/10">
-  <td class="py-4 px-6 text-center font-bold text-gray-300 transition-colors duration-300">{rank}</td>
-  <td class="py-4 px-6">
-    <div class="flex items-center gap-3">
-      <img src={rankIcon} alt={`Rank ${rank}`} class="w-8 h-8 transition-transform duration-300 hover:scale-110" />
-      <span class="font-semibold text-white transition-colors duration-300">{user}</span>
+<tr class="border-b border-gray-700 hover:bg-white/10 transition-all duration-300 ease-in-out">
+  <td class="py-2 px-2 sm:py-3 sm:px-4 lg:py-4 lg:px-6 text-center font-bold text-gray-300 transition-colors duration-300 text-[10px] sm:text-xs lg:text-base">{rank}</td>
+  <td class="py-2 px-2 sm:py-3 sm:px-4 lg:py-4 lg:px-6">
+    <div class="flex items-center gap-1 sm:gap-2 lg:gap-3">
+      <img src={rankIcon} alt={`Rank ${rank}`} class="w-5 h-5 sm:w-6 sm:h-6 lg:w-8 lg:h-8 transition-transform duration-300 hover:scale-110" />
+      <span class="font-semibold text-white transition-colors duration-300 text-[10px] sm:text-xs lg:text-base">{user}</span>
     </div>
   </td>
-  <td class="py-4 px-6 text-center font-bold text-white transition-all duration-300">{score}</td>
-  <td class="py-4 px-6 text-center text-gray-300 transition-colors duration-300">{challenges}</td>
+  <td class="py-2 px-2 sm:py-3 sm:px-4 lg:py-4 lg:px-6 text-center font-bold text-white transition-all duration-300 text-[10px] sm:text-xs lg:text-base">{score}</td>
+  <td class="py-2 px-2 sm:py-3 sm:px-4 lg:py-4 lg:px-6 text-center text-gray-300 transition-colors duration-300 text-[10px] sm:text-xs lg:text-base">{challenges}</td>
 </tr>
