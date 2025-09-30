@@ -1,0 +1,23 @@
+---
+interface Props {
+  rank: number;
+  user: string;
+  score: number;
+  challenges: number;
+  rankIcon: string;
+}
+
+const { rank, user, score, challenges, rankIcon } = Astro.props;
+---
+
+<tr class="border-b border-[#FFFFFF] hover:bg-gradient-to-r hover:from-purple-900/20 hover:to-blue-900/20 transition-all duration-300 ease-in-out hover:scale-[1.01] hover:shadow-lg hover:shadow-purple-500/10">
+  <td class="py-4 px-6 text-center font-bold text-gray-300 transition-colors duration-300">{rank}</td>
+  <td class="py-4 px-6">
+    <div class="flex items-center gap-3">
+      <img src={rankIcon} alt={`Rank ${rank}`} class="w-8 h-8 transition-transform duration-300 hover:scale-110" />
+      <span class="font-semibold text-white transition-colors duration-300">{user}</span>
+    </div>
+  </td>
+  <td class="py-4 px-6 text-center font-bold text-white transition-all duration-300">{score}</td>
+  <td class="py-4 px-6 text-center text-gray-300 transition-colors duration-300">{challenges}</td>
+</tr>
