@@ -10,13 +10,40 @@
 
     <!-- Navigation Links -->
     <nav class="flex flex-wrap items-center justify-center gap-3 md:gap-6 text-sm md:text-base text-gray-300">
-      <a href="#" class="hover:text-white transition-colors">Team</a>
+      <a href="#" class="hover:text-white transition-colors" data-i18n="footer.team">Team</a>
       <span class="text-gray-600">|</span>
-      <a href="#" class="hover:text-white transition-colors">Help Center</a>
+      <a href="#" class="hover:text-white transition-colors" data-i18n="footer.helpCenter">Help Center</a>
       <span class="text-gray-600">|</span>
-      <a href="#" class="hover:text-white transition-colors">Terms</a>
+      <a href="#" class="hover:text-white transition-colors" data-i18n="footer.terms">Terms</a>
       <span class="text-gray-600">|</span>
-      <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+      <a href="#" class="hover:text-white transition-colors" data-i18n="footer.privacy">Privacy Policy</a>
     </nav>
   </div>
 </footer>
+
+<script>
+  import { ui } from '../i18n';
+
+  function updateTranslations() {
+    const lang = (localStorage.getItem('language') || 'es') as 'en' | 'es';
+    const elements = document.querySelectorAll('[data-i18n]');
+
+    elements.forEach((el) => {
+      const key = el.getAttribute('data-i18n');
+      if (!key) return;
+
+      const keys = key.split('.');
+      let value: any = ui[lang];
+
+      for (const k of keys) {
+        value = value?.[k];
+      }
+
+      if (value) {
+        el.textContent = value;
+      }
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', updateTranslations);
+</script>
