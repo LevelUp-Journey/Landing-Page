@@ -1,0 +1,55 @@
+{
+  "header": {
+    "title": "Level Up Journey",
+    "language": "Idioma",
+    "account": "Cuenta"
+  },
+  "section1": {
+    "title": "Potencia tus habilidades en C++",
+    "subtitle": "El editor de retos en línea creado para los estudiantes de la UPC. Practica, compila y sube de nivel—directamente en tu navegador.",
+    "emailPlaceholder": "Correo electrónico",
+    "button": "Únete a la aventura"
+  },
+  "section2": {
+    "title": "Desbloquea tus habilidades de programación",
+    "subtitle": "Impulsa tus competencias y asegura las bases de tu futura carrera.",
+    "card1": {
+      "title": "Editor de código en tiempo real",
+      "description": "Escribe, ejecuta y valida tu código al instante—sin necesidad de configuraciones. Todo sucede en el navegador, para que te concentres en resolver problemas, no en instalar herramientas."
+    },
+    "card2": {
+      "title": "Retos semanales",
+      "description": "Mejora tus capacidades con desafíos nuevos cada semana. Enfrenta problemas reales, compite con tus compañeros y fortalece tu confianza en la programación."
+    },
+    "card3": {
+      "title": "Retroalimentación instantánea",
+      "description": "Envía tu solución y revisa los resultados de inmediato. Aprende de tus errores, mejora más rápido y sigue elevando tus habilidades al siguiente nivel."
+    }
+  },
+  "section3": {
+    "title": "Compite. Escala. Brilla.",
+    "subtitle": "Reta a tus compañeros. Sube en el ranking.",
+    "description": "Únete a una comunidad de estudiantes que comparten tu pasión por la programación. Cada reto es una oportunidad para poner a prueba tu capacidad de resolver problemas, ganar puntos y compararte con otros. Con cada victoria, subes en la tabla de posiciones—impulsado por la competencia, la colaboración y la búsqueda de la maestría.",
+    "leaderboard": {
+      "rank": "Posición",
+      "user": "Usuario",
+      "score": "Puntaje",
+      "challenges": "Retos"
+    }
+  },
+  "section4": {
+    "title": "Comienza a aprender a programar",
+    "subtitle": "Practica, compite y progresa con retos de programación reales.",
+    "button": "Únete a Level Up Journey"
+  },
+  "section5": {
+    "title": "Nuestra misión",
+    "description": "Apoyar a los estudiantes a mantenerse motivados y avanzar en su camino de programación. A través de retos interactivos, competencia amistosa y una comunidad activa, hacemos que el aprendizaje sea atractivo y gratificante—ayudando a cada estudiante a crecer con confianza y constancia."
+  },
+  "footer": {
+    "team": "Equipo",
+    "helpCenter": "Centro de ayuda",
+    "terms": "Términos",
+    "privacy": "Política de privacidad"
+  }
+}

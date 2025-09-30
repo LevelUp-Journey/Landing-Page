@@ -1,0 +1,55 @@
+{
+  "header": {
+    "title": "Level Up Journey",
+    "language": "Language",
+    "account": "Account"
+  },
+  "section1": {
+    "title": "Level Up Your Coding C++ powers",
+    "subtitle": "The online challenge editor made for UPC juniors. Practice, compile, and level-up—right in your browser.",
+    "emailPlaceholder": "Email Address",
+    "button": "Sign up to the Journey"
+  },
+  "section2": {
+    "title": "Unlock your coding abilities",
+    "subtitle": "Boost your skills and secure the foundations of your future career.",
+    "card1": {
+      "title": "Real time code editor",
+      "description": "Write, run, and prove your code instantly—no setup required. Everything happens in the browser, so you can focus on solving problems, not configuring tools."
+    },
+    "card2": {
+      "title": "Weekly challenges",
+      "description": "Sharpen your abilities with fresh challenges every week. Tackle real-world problems, compete with peers, and steadily build your coding confidence."
+    },
+    "card3": {
+      "title": "Instant feedback",
+      "description": "Submit your solution and see the results right away. Learn from mistakes, improve faster, and keep pushing your skills to the next level."
+    }
+  },
+  "section3": {
+    "title": "Compete. Rank. Shine.",
+    "subtitle": "Challenge your peers. Climb the ranks.",
+    "description": "Join a community of students who share your passion for programming. Each coding challenge is a chance to test your problem-solving skills, earn points, and see how you stack up against others. With every victory, you move higher on the leaderboard—driven by competition, collaboration, and the pursuit of mastery.",
+    "leaderboard": {
+      "rank": "Rank",
+      "user": "User",
+      "score": "Score",
+      "challenges": "Challenges"
+    }
+  },
+  "section4": {
+    "title": "Start Learning to Code",
+    "subtitle": "Practice, compete, and rise through real coding challenges.",
+    "button": "Join Level Up Journey"
+  },
+  "section5": {
+    "title": "Our mission",
+    "description": "To support students in staying motivated and progressing in their coding journey. Through interactive challenges, friendly competition, and a vibrant community, we make learning engaging and rewarding—helping every student grow with confidence and consistency."
+  },
+  "footer": {
+    "team": "Team",
+    "helpCenter": "Help Center",
+    "terms": "Terms",
+    "privacy": "Privacy Policy"
+  }
+}
