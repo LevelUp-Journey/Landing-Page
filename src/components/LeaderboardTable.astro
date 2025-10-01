@@ -1,0 +1,89 @@
+---
+import LeaderboardCard from './LeaderboardCard.astro';
+---
+
+<div class="w-full">
+  <div class="bg-neutral-900 rounded-lg border border-gray-700 overflow-hidden">
+    <table class="w-full">
+      <thead>
+        <tr class="bg-neutral-800 border-b border-gray-700">
+          <th class="py-2 px-2 sm:py-3 sm:px-4 lg:py-4 lg:px-6 text-left text-[10px] sm:text-xs lg:text-sm font-semibold text-gray-300" data-i18n="section3.leaderboard.rank">Rank</th>
+          <th class="py-2 px-2 sm:py-3 sm:px-4 lg:py-4 lg:px-6 text-left text-[10px] sm:text-xs lg:text-sm font-semibold text-gray-300" data-i18n="section3.leaderboard.user">User</th>
+          <th class="py-2 px-2 sm:py-3 sm:px-4 lg:py-4 lg:px-6 text-center text-[10px] sm:text-xs lg:text-sm font-semibold text-gray-300" data-i18n="section3.leaderboard.score">Score</th>
+          <th class="py-2 px-2 sm:py-3 sm:px-4 lg:py-4 lg:px-6 text-center text-[10px] sm:text-xs lg:text-sm font-semibold text-gray-300" data-i18n="section3.leaderboard.challenges">Retos</th>
+        </tr>
+      </thead>
+      <tbody>
+        <LeaderboardCard
+          rank={1}
+          user="Sideral"
+          score={985}
+          challenges={121}
+          rankIcon="/assets/section3/ranks/7-GrandMaster.png"
+        />
+        <LeaderboardCard
+          rank={2}
+          user="Bebote"
+          score={902}
+          challenges={112}
+          rankIcon="/assets/section3/ranks/6-Master.png"
+        />
+        <LeaderboardCard
+          rank={3}
+          user="Patitoo"
+          score={879}
+          challenges={100}
+          rankIcon="/assets/section3/ranks/5-Diamond.png"
+        />
+        <LeaderboardCard
+          rank={4}
+          user="Marina"
+          score={800}
+          challenges={87}
+          rankIcon="/assets/section3/ranks/4-Platinium.png"
+        />
+        <LeaderboardCard
+          rank={5}
+          user="Pekass"
+          score={798}
+          challenges={86}
+          rankIcon="/assets/section3/ranks/3-Gold.png"
+        />
+        <LeaderboardCard
+          rank={6}
+          user="User26"
+          score={690}
+          challenges={67}
+          rankIcon="/assets/section3/ranks/2-Silver.png"
+        />
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<script>
+  import { ui } from '../i18n';
+
+  function updateTranslations() {
+    const lang = (localStorage.getItem('language') || 'es') as 'en' | 'es';
+    const elements = document.querySelectorAll('[data-i18n]');
+
+    elements.forEach((el) => {
+      const key = el.getAttribute('data-i18n');
+      if (!key) return;
+
+      const keys = key.split('.');
+      let value: any = ui[lang];
+
+      for (const k of keys) {
+        value = value?.[k];
+      }
+
+      if (value) {
+        el.textContent = value;
+      }
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', updateTranslations);
+</script>

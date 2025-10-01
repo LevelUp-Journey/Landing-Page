@@ -1,0 +1,49 @@
+---
+---
+
+<footer class="bg-neutral-950 border-t border-gray-700 py-8 px-6">
+  <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+    <!-- Logo and Title -->
+    <div class="flex items-center gap-3">
+      <img src="/assets/header-title.png" alt="Level Up Journey" class="h-5 md:h-6" />
+    </div>
+
+    <!-- Navigation Links -->
+    <nav class="flex flex-wrap items-center justify-center gap-3 md:gap-6 text-sm md:text-base text-gray-300">
+      <a href="#" class="hover:text-white transition-colors" data-i18n="footer.team">Team</a>
+      <span class="text-gray-600">|</span>
+      <a href="#" class="hover:text-white transition-colors" data-i18n="footer.helpCenter">Help Center</a>
+      <span class="text-gray-600">|</span>
+      <a href="#" class="hover:text-white transition-colors" data-i18n="footer.terms">Terms</a>
+      <span class="text-gray-600">|</span>
+      <a href="#" class="hover:text-white transition-colors" data-i18n="footer.privacy">Privacy Policy</a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+  import { ui } from '../i18n';
+
+  function updateTranslations() {
+    const lang = (localStorage.getItem('language') || 'es') as 'en' | 'es';
+    const elements = document.querySelectorAll('[data-i18n]');
+
+    elements.forEach((el) => {
+      const key = el.getAttribute('data-i18n');
+      if (!key) return;
+
+      const keys = key.split('.');
+      let value: any = ui[lang];
+
+      for (const k of keys) {
+        value = value?.[k];
+      }
+
+      if (value) {
+        el.textContent = value;
+      }
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', updateTranslations);
+</script>
