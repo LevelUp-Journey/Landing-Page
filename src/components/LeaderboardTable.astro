@@ -17,44 +17,51 @@ import LeaderboardCard from './LeaderboardCard.astro';
         <LeaderboardCard
           rank={1}
           user="Sideral"
-          score={985}
+          score={2000}
           challenges={121}
           rankIcon="/assets/section3/ranks/7-GrandMaster.png"
         />
         <LeaderboardCard
           rank={2}
           user="Bebote"
-          score={902}
+          score={1800}
           challenges={112}
           rankIcon="/assets/section3/ranks/6-Master.png"
         />
         <LeaderboardCard
           rank={3}
           user="Patitoo"
-          score={879}
+          score={1600}
           challenges={100}
           rankIcon="/assets/section3/ranks/5-Diamond.png"
         />
         <LeaderboardCard
           rank={4}
           user="Marina"
-          score={800}
+          score={1500}
           challenges={87}
           rankIcon="/assets/section3/ranks/4-Platinium.png"
         />
         <LeaderboardCard
           rank={5}
           user="Pekass"
-          score={798}
+          score={1300}
           challenges={86}
           rankIcon="/assets/section3/ranks/3-Gold.png"
         />
         <LeaderboardCard
           rank={6}
           user="User26"
-          score={690}
+          score={1200}
           challenges={67}
           rankIcon="/assets/section3/ranks/2-Silver.png"
+        />
+        <LeaderboardCard
+          rank={7}
+          user="User27"
+          score={1000}
+          challenges={60}
+          rankIcon="/assets/section3/ranks/1-Bronze.png"
         />
       </tbody>
     </table>
@@ -62,7 +69,7 @@ import LeaderboardCard from './LeaderboardCard.astro';
 </div>
 
 <script>
-  import { ui } from '../i18n';
+  import { ui } from '../i18n/index';
 
   function updateTranslations() {
     const lang = (localStorage.getItem('language') || 'es') as 'en' | 'es';
