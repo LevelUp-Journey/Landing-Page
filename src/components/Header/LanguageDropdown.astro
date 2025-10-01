@@ -1,0 +1,80 @@
+---
+// Language dropdown menu component
+---
+
+<div class="language-menu-container">
+  <button
+    id="language-toggle"
+    class="hover:opacity-80 transition-opacity"
+    aria-label="Cambiar idioma"
+  >
+    <img
+      src="/assets/header/i18n.svg"
+      alt="Idioma"
+      class="w-7 h-7"
+    />
+  </button>
+
+  <div id="language-dropdown" class="language-dropdown">
+    <button class="language-option" data-lang="en">
+      <span class="lang-code">EN</span>
+    </button>
+    <button class="language-option" data-lang="es">
+      <span class="lang-code">ES</span>
+    </button>
+  </div>
+</div>
+
+<style>
+  .language-menu-container {
+    position: relative;
+  }
+
+  .language-dropdown {
+    position: absolute;
+    top: calc(100% + 0.5rem);
+    right: 0;
+    background: rgba(23, 23, 23, 0.95);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 0.75rem;
+    padding: 0.25rem;
+    min-width: 80px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.2s ease;
+    backdrop-filter: blur(12px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    z-index: 1000;
+  }
+
+  .language-dropdown.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .language-option {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 0.5rem;
+    background: transparent;
+    border: none;
+    border-radius: 0.375rem;
+    cursor: pointer;
+    transition: background 0.2s;
+    color: #ffffff;
+  }
+
+  .language-option:hover {
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  .lang-code {
+    font-weight: 700;
+    font-size: 0.875rem;
+    letter-spacing: 0.05em;
+  }
+</style>
