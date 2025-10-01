@@ -2,8 +2,8 @@ export const BUBBLE_CONFIG = {
   MIN_BUBBLES: 13,
   MAX_BUBBLES: 20,
   BUBBLE_SIZE: 55,
-  MIN_SPEED: 0.15,
-  MAX_SPEED: 0.3,
+  MIN_SPEED: 0.135,
+  MAX_SPEED: 0.27,
   STORAGE_KEY: 'floating-bubbles-state',
   STATE_EXPIRY: 5 * 60 * 1000, // 5 minutos
   SAVE_INTERVAL: 1000, // 1 segundo
