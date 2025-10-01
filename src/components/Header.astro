@@ -1,5 +1,7 @@
 ---
 // Header component
+import LanguageDropdown from './Header/LanguageDropdown.astro';
+import './Header/header.css';
 ---
 
 <header id="main-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b border-transparent">
@@ -16,17 +18,7 @@
 
       <!-- Iconos de navegación -->
       <div class="flex items-center gap-6">
-        <button
-          id="language-toggle"
-          class="hover:opacity-80 transition-opacity"
-          aria-label="Cambiar idioma"
-        >
-          <img
-            src="/assets/header/i18n.svg"
-            alt="Idioma"
-            class="w-7 h-7"
-          />
-        </button>
+        <LanguageDropdown />
 
         <button
           class="hover:opacity-80 transition-opacity"
@@ -44,41 +36,9 @@
 </header>
 
 <script>
-  // Initialize language on load
-  if (!localStorage.getItem('language')) {
-    localStorage.setItem('language', 'es');
-  }
+  import { initLanguageDropdown } from './Header/languageDropdown';
+  import { initStickyHeader } from './Header/stickyHeader';
 
-  document.getElementById('language-toggle')?.addEventListener('click', () => {
-    const currentLang = localStorage.getItem('language') || 'es';
-    const newLang = currentLang === 'es' ? 'en' : 'es';
-
-    localStorage.setItem('language', newLang);
-    window.location.reload();
-  });
-
-  // Sticky header with scroll effect
-  const header = document.getElementById('main-header');
-
-  window.addEventListener('scroll', () => {
-    const currentScroll = window.pageYOffset;
-
-    if (currentScroll > 50) {
-      header?.classList.add('scrolled');
-    } else {
-      header?.classList.remove('scrolled');
-    }
-  });
+  initLanguageDropdown();
+  initStickyHeader();
 </script>
-
-<style>
-  #main-header {
-    background: transparent;
-  }
-
-  #main-header.scrolled {
-    background: rgba(23, 23, 23, 0.95);
-    border-bottom-color: rgba(38, 38, 38, 0.5);
-    backdrop-filter: blur(12px);
-  }
-</style>
