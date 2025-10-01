@@ -1,27 +1,17 @@
 ---
-import Cpp from './icons/programming-languages/cpp.astro';
-import Dotnet from './icons/programming-languages/dotnet.astro';
-import Go from './icons/programming-languages/go.astro';
-import Java from './icons/programming-languages/java.astro';
-import Javascript from './icons/programming-languages/javascript.astro';
-import Python from './icons/programming-languages/python.astro';
-import Rust from './icons/programming-languages/rust.astro';
-import Swift from './icons/programming-languages/swift.astro';
-import Typescript from './icons/programming-languages/typescript.astro';
+const cppIcon = '/assets/section1/programming-languages/c++.svg';
+const javaIcon = '/assets/section1/programming-languages/java.svg';
+const javascriptIcon = '/assets/section1/programming-languages/javascript.svg';
+const pythonIcon = '/assets/section1/programming-languages/python.svg';
 ---
 
 <div class="floating-languages-container" id="floating-container"></div>
 
 <template id="bubble-templates">
-  <div class="bubble-template" data-lang="javascript"><Javascript class="icon" /></div>
-  <div class="bubble-template" data-lang="python"><Python class="icon" /></div>
-  <div class="bubble-template" data-lang="typescript"><Typescript class="icon" /></div>
-  <div class="bubble-template" data-lang="rust"><Rust class="icon" /></div>
-  <div class="bubble-template" data-lang="cpp"><Cpp class="icon" /></div>
-  <div class="bubble-template" data-lang="java"><Java class="icon" /></div>
-  <div class="bubble-template" data-lang="go"><Go class="icon" /></div>
-  <div class="bubble-template" data-lang="swift"><Swift class="icon" /></div>
-  <div class="bubble-template" data-lang="dotnet"><Dotnet class="icon" /></div>
+  <div class="bubble-template" data-lang="javascript"><img src={javascriptIcon} class="icon" alt="JavaScript" /></div>
+  <div class="bubble-template" data-lang="python"><img src={pythonIcon} class="icon" alt="Python" /></div>
+  <div class="bubble-template" data-lang="cpp"><img src={cppIcon} class="icon" alt="C++" /></div>
+  <div class="bubble-template" data-lang="java"><img src={javaIcon} class="icon" alt="Java" /></div>
 </template>
 
 <style>
