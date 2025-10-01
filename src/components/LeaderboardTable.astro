@@ -56,13 +56,20 @@ import LeaderboardCard from './LeaderboardCard.astro';
           challenges={67}
           rankIcon="/assets/section3/ranks/2-Silver.png"
         />
+        <LeaderboardCard
+          rank={7}
+          user="User27"
+          score={650}
+          challenges={60}
+          rankIcon="/assets/section3/ranks/1-Bronze.png"
+        />
       </tbody>
     </table>
   </div>
 </div>
 
 <script>
-  import { ui } from '../i18n';
+  import { ui } from '../i18n/index';
 
   function updateTranslations() {
     const lang = (localStorage.getItem('language') || 'es') as 'en' | 'es';
