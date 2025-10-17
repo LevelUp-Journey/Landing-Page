@@ -49,7 +49,7 @@
   "footer": {
     "product": "Product",
     "aboutTeam": "Team",
-    "helpCenter": "Help Center",
+    "helpCenter": "FAQ",
     "privacy": "Privacy Policy"
   },
   "product": {
@@ -69,7 +69,7 @@
     }
   },
   "helpCenter": {
-    "title": "Help Center",
+    "title": "FAQ",
     "faq": {
       "title": "FAQ",
       "q1": {
