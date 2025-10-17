@@ -30,7 +30,7 @@ export function Section3Subtitle({ defaultText, i18nKey }: Section3SubtitleProps
   }, [i18nKey]);
 
   return (
-    <TypographyH3 className="text-gray-300 mb-5 text-xl font-semibold">
+    <TypographyH3 className="text-gray-600 mb-5 text-xl font-semibold">
       {text}
     </TypographyH3>
   );
