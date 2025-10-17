@@ -19,6 +19,15 @@ import { HeroSubtitle } from './ui/HeroSubtitle';
 
   <!-- Contenido -->
   <div class="relative z-10 container mx-auto px-6 py-20 text-center">
+    <!-- Logo/Mascota -->
+    <div class="mb-8 animate-bounce-slow">
+      <img
+        src="/level-up-cat-full.png"
+        alt="Level Up Cat"
+        class="w-32 h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 mx-auto drop-shadow-2xl"
+      />
+    </div>
+
     <HeroTitle
       client:load
       defaultText="Level Up Your Coding Journey"
@@ -38,3 +47,18 @@ import { HeroSubtitle } from './ui/HeroSubtitle';
     </div>
   </div>
 </section>
+
+<style>
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  .animate-bounce-slow {
+    animation: float 3s ease-in-out infinite;
+  }
+</style>
