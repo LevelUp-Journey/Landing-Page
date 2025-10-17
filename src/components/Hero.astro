@@ -1,6 +1,8 @@
 ---
 // Hero Section - Level Up your C++ powers
 import FloatingLanguages from './FloatingLanguages.astro';
+import { JoinButton } from './ui/JoinButton';
+import { EmailInput } from './ui/EmailInput';
 ---
 
 <section
@@ -25,18 +27,8 @@ import FloatingLanguages from './FloatingLanguages.astro';
 
     <!-- Formulario de email -->
     <div class="flex flex-col sm:flex-row items-center justify-center gap-4 max-w-2xl mx-auto">
-      <input
-        id="email-input"
-        type="email"
-        placeholder="Enter your email"
-        class="w-full sm:flex-1 px-6 py-4 bg-neutral-900/80 border border-neutral-700 rounded-lg text-white placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-red-600 focus:border-transparent"
-      />
-      <button
-        class="w-full sm:w-auto px-8 py-4 bg-red-600 hover:bg-red-700 text-white font-semibold rounded-lg transition-colors duration-200"
-        data-i18n="section1.button"
-      >
-        Join Now
-      </button>
+      <EmailInput client:load placeholder="Enter your email" />
+      <JoinButton client:load text="Join Now" data-i18n-btn="section1.button" />
     </div>
   </div>
 </section>
@@ -63,12 +55,6 @@ import FloatingLanguages from './FloatingLanguages.astro';
         el.textContent = value;
       }
     });
-
-    // Update placeholder
-    const emailInput = document.getElementById('email-input') as HTMLInputElement;
-    if (emailInput) {
-      emailInput.placeholder = ui[lang].section1.emailPlaceholder;
-    }
   }
 
   document.addEventListener('DOMContentLoaded', updateTranslations);

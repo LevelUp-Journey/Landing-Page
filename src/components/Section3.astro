@@ -1,5 +1,5 @@
 ---
-import LeaderboardTable from './LeaderboardTable.astro';
+import { Leaderboard } from './ui/Leaderboard';
 ---
 
 <section class="section bg-neutral-950">
@@ -7,7 +7,13 @@ import LeaderboardTable from './LeaderboardTable.astro';
     <div class="grid lg:grid-cols-2 gap-12 items-center">
       <!-- Leaderboard Table -->
       <div class="order-2 lg:order-1">
-        <LeaderboardTable />
+        <Leaderboard
+          client:load
+          defaultRank="Rank"
+          defaultUser="User"
+          defaultScore="Score"
+          defaultChallenges="Retos"
+        />
       </div>
 
       <!-- Text Content -->
