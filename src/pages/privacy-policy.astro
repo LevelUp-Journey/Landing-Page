@@ -1,3 +1,26 @@
 ---
-return Astro.redirect('/');
+import '../styles/global.css';
+import '../styles/globals.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Section1 from '../components/privacy-policy/Section1.astro';
+import Section2 from '../components/privacy-policy/Section2.astro';
 ---
+
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/level-up-cat-happy.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Privacy Policy - Level Up Journey</title>
+  </head>
+  <body class="bg-neutral-950 text-white">
+    <Header />
+    <main class="min-h-screen">
+      <Section1 />
+      <Section2 />
+    </main>
+    <Footer />
+  </body>
+</html>

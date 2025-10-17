@@ -127,11 +127,55 @@
     "description": "Estamos creando un editor de código diseñado para estudiantes universitarios, combinando simplicidad, rendimiento y características orientadas al aprendizaje. A diferencia de los editores genéricos, nuestra plataforma se integra directamente con el plan de estudios, desafíos semanales y retroalimentación en tiempo real, ayudando a los estudiantes no solo a codificar, sino a crecer sus habilidades de manera atractiva.",
     "mission": {
       "title": "Nuestra misión",
-      "description": "Ayudar a los estudiantes a superar el miedo a la programación proporcionando un entorno de aprendizaje de apoyo, práctico y atractivo. Nuestro objetivo es reducir las tasas de abandono en STEM convirtiendo la codificación en una habilidad que se sienta alcanzable e incluso divertida."
+      "description": "Ayudar a los estudiantes a superar el miedo a la programación proporcionando un entorno de aprendizaje de apoyo, práctico y atractivo. Nuestro objetivo es reducir las tasas de abandono en STEM convirtiendo la codificación en una habilidad que se siente alcanzable e incluso divertida."
     },
     "vision": {
       "title": "Nuestra visión",
       "description": "Ser la primera piedra angular en la codificación para miles de estudiantes — transformando el miedo en curiosidad, la confusión en confianza y los principiantes en futuros innovadores."
+    }
+  },
+  "privacyPolicy": {
+    "title": "Política de Privacidad",
+    "sections": {
+      "1": {
+        "title": "1. Acerca de Este Proyecto",
+        "content": "Esta plataforma fue creada por estudiantes para estudiantes, como parte de una iniciativa universitaria. Nuestro objetivo principal es ayudar a los estudiantes a aprender a programar en un entorno seguro y de apoyo."
+      },
+      "2": {
+        "title": "2. Qué Datos Recopilamos",
+        "content": "No recopilamos datos personales innecesarios.",
+        "list": [
+          "Información básica de cuenta: nombre, correo electrónico y rol (estudiante/profesor).",
+          "Datos de uso: envíos de código, progreso y puntuaciones.",
+          "Información opcional: foto de perfil o avatar si eliges agregarlo."
+        ]
+      },
+      "3": {
+        "title": "3. Cómo Usamos Tus Datos",
+        "content": "No vendemos, alquilamos ni compartimos tus datos con empresas externas.",
+        "list": [
+          "Para permitirte iniciar sesión y usar el editor de código.",
+          "Para rastrear tu progreso de aprendizaje, puntos y rankings.",
+          "Para ayudar a los profesores a revisar la actividad de los estudiantes y dar retroalimentación.",
+          "Para mejorar la plataforma basada en cómo los estudiantes la usan."
+        ]
+      },
+      "4": {
+        "title": "4. Almacenamiento y Seguridad de Datos",
+        "content": "Todos los datos se almacenan de forma segura utilizando herramientas aprobadas por la universidad. Hacemos nuestro mejor esfuerzo para proteger tu información, pero recuerda que esto es un proyecto estudiantil y no un producto comercial."
+      },
+      "5": {
+        "title": "5. Tus Derechos",
+        "list": [
+          "Puedes solicitar eliminar tu cuenta o datos en cualquier momento.",
+          "Puedes preguntarnos qué información tenemos almacenada sobre ti.",
+          "Puedes dejar de usar la plataforma en cualquier momento."
+        ]
+      },
+      "6": {
+        "title": "6. Contacto",
+        "content": "Si tienes preguntas, problemas o preocupaciones, por favor contacta al equipo estudiantil detrás del proyecto o a tu profesor del curso."
+      }
     }
   }
 }
