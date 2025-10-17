@@ -119,5 +119,19 @@
       "email": "Email:",
       "phone": "Number:"
     }
+  },
+  "about": {
+    "members": {
+      "title": "Our Team"
+    },
+    "description": "We’re building a code editor designed for university students, combining simplicity, performance, and learning-oriented features. Unlike generic editors, our platform integrates directly with coursework, weekly challenges, and real-time feedback — helping students not just code, but grow their skills in an engaging way.",
+    "mission": {
+      "title": "Our mission",
+      "description": "To help students overcome the fear of coding by providing a supportive, practical, and engaging learning environment. We aim to reduce dropout rates in STEM by turning coding into a skill that feels achievable and even fun."
+    },
+    "vision": {
+      "title": "Our vision",
+      "description": "To be the first stepping stone into coding for thousands of students — transforming fear into curiosity, confusion into confidence, and beginners into future innovators."
+    }
   }
 }

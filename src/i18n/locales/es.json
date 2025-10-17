@@ -119,5 +119,19 @@
       "email": "Correo:",
       "phone": "Número:"
     }
+  },
+  "about": {
+    "members": {
+      "title": "Nuestro Equipo"
+    },
+    "description": "Estamos creando un editor de código diseñado para estudiantes universitarios, combinando simplicidad, rendimiento y características orientadas al aprendizaje. A diferencia de los editores genéricos, nuestra plataforma se integra directamente con el plan de estudios, desafíos semanales y retroalimentación en tiempo real, ayudando a los estudiantes no solo a codificar, sino a crecer sus habilidades de manera atractiva.",
+    "mission": {
+      "title": "Nuestra misión",
+      "description": "Ayudar a los estudiantes a superar el miedo a la programación proporcionando un entorno de aprendizaje de apoyo, práctico y atractivo. Nuestro objetivo es reducir las tasas de abandono en STEM convirtiendo la codificación en una habilidad que se sienta alcanzable e incluso divertida."
+    },
+    "vision": {
+      "title": "Nuestra visión",
+      "description": "Ser la primera piedra angular en la codificación para miles de estudiantes — transformando el miedo en curiosidad, la confusión en confianza y los principiantes en futuros innovadores."
+    }
   }
 }
