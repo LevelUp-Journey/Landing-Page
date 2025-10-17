@@ -47,9 +47,9 @@
     "description": "Apoyar a los estudiantes a mantenerse motivados y avanzar en su camino de programación. A través de retos interactivos, competencia amistosa y una comunidad activa, hacemos que el aprendizaje sea atractivo y gratificante—ayudando a cada estudiante a crecer con confianza y constancia."
   },
   "footer": {
-    "team": "Equipo",
+    "product": "Producto",
+    "aboutTeam": "Sobre el equipo",
     "helpCenter": "Centro de ayuda",
-    "terms": "Términos",
     "privacy": "Política de privacidad"
   }
 }

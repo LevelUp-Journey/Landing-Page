@@ -1,80 +1,51 @@
 ---
+import { FeatureCard } from './ui/FeatureCard';
+import { SectionTitle } from './ui/SectionTitle';
+import { SectionSubtitle } from './ui/SectionSubtitle';
 ---
 
 <section class="section bg-neutral-950">
   <div class="container-custom">
     <div class="text-center mb-16">
-      <h2 class="text-4xl md:text-5xl font-bold text-white mb-4" data-i18n="section2.title">
-        Unlock your coding abilities
-      </h2>
-      <p class="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto" data-i18n="section2.subtitle">
-        Boost your skills and secure the foundations of your future career.
-      </p>
+      <SectionTitle
+        client:load
+        defaultText="Unlock your coding abilities"
+        i18nKey="section2.title"
+      />
+      <SectionSubtitle
+        client:load
+        defaultText="Boost your skills and secure the foundations of your future career."
+        i18nKey="section2.subtitle"
+      />
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
-      <div class="card">
-        <div class="flex items-center gap-4 mb-4">
-          <img src="/assets/section2/icons/code.svg" alt="Code editor" class="w-5 h-5" />
-          <h3 class="text-2xl font-bold text-white" data-i18n="section2.card1.title">
-            Real time code editor
-          </h3>
-        </div>
-        <p class="text-gray-400 leading-relaxed" data-i18n="section2.card1.description">
-          Write, run, and prove your code instantly—no setup required. Everything happens in the browser, so you can focus on solving problems, not configuring tools.
-        </p>
-      </div>
+      <FeatureCard
+        client:load
+        icon="/assets/section2/icons/code.svg"
+        titleKey="section2.card1.title"
+        descriptionKey="section2.card1.description"
+        defaultTitle="Real time code editor"
+        defaultDescription="Write, run, and prove your code instantly—no setup required. Everything happens in the browser, so you can focus on solving problems, not configuring tools."
+      />
 
-      <div class="card">
-        <div class="flex items-center gap-4 mb-4">
-          <img src="/assets/section2/icons/calendar-check.svg" alt="Calendar" class="w-5 h-5" />
-          <h3 class="text-2xl font-bold text-white" data-i18n="section2.card2.title">
-            Weekly challenges
-          </h3>
-        </div>
-        <p class="text-gray-400 leading-relaxed" data-i18n="section2.card2.description">
-          Sharpen your abilities with fresh challenges every week. Tackle real-world problems, compete with peers, and steadily build your coding confidence.
-        </p>
-      </div>
+      <FeatureCard
+        client:load
+        icon="/assets/section2/icons/calendar-check.svg"
+        titleKey="section2.card2.title"
+        descriptionKey="section2.card2.description"
+        defaultTitle="Weekly challenges"
+        defaultDescription="Sharpen your abilities with fresh challenges every week. Tackle real-world problems, compete with peers, and steadily build your coding confidence."
+      />
 
-      <div class="card">
-        <div class="flex items-center gap-4 mb-4">
-          <img src="/assets/section2/icons/hammer.svg" alt="Tools" class="w-5 h-5" />
-          <h3 class="text-2xl font-bold text-white" data-i18n="section2.card3.title">
-            Instant feedback
-          </h3>
-        </div>
-        <p class="text-gray-400 leading-relaxed" data-i18n="section2.card3.description">
-          Submit your solution and see the results right away. Learn from mistakes, improve faster, and keep pushing your skills to the next level.
-        </p>
-      </div>
+      <FeatureCard
+        client:load
+        icon="/assets/section2/icons/hammer.svg"
+        titleKey="section2.card3.title"
+        descriptionKey="section2.card3.description"
+        defaultTitle="Instant feedback"
+        defaultDescription="Submit your solution and see the results right away. Learn from mistakes, improve faster, and keep pushing your skills to the next level."
+      />
     </div>
   </div>
 </section>
-
-<script>
-  import { ui } from '../i18n';
-
-  function updateTranslations() {
-    const lang = (localStorage.getItem('language') || 'es') as 'en' | 'es';
-    const elements = document.querySelectorAll('[data-i18n]');
-
-    elements.forEach((el) => {
-      const key = el.getAttribute('data-i18n');
-      if (!key) return;
-
-      const keys = key.split('.');
-      let value: any = ui[lang];
-
-      for (const k of keys) {
-        value = value?.[k];
-      }
-
-      if (value) {
-        el.textContent = value;
-      }
-    });
-  }
-
-  document.addEventListener('DOMContentLoaded', updateTranslations);
-</script>

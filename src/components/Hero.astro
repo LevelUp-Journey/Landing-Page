@@ -1,11 +1,15 @@
 ---
 // Hero Section - Level Up your C++ powers
 import FloatingLanguages from './FloatingLanguages.astro';
+import { JoinButton } from './ui/JoinButton';
+import { EmailInput } from './ui/EmailInput';
+import { HeroTitle } from './ui/HeroTitle';
+import { HeroSubtitle } from './ui/HeroSubtitle';
 ---
 
 <section
   class="relative min-h-screen flex items-center justify-center bg-cover bg-center bg-no-repeat"
-  style="background-image: url('/assets/section1/background.png');"
+  style="background-image: url('/assets/section1/background.svg');"
 >
   <!-- Overlay oscuro para mejorar legibilidad -->
   <div class="absolute inset-0 bg-black/50"></div>
@@ -15,61 +19,46 @@ import FloatingLanguages from './FloatingLanguages.astro';
 
   <!-- Contenido -->
   <div class="relative z-10 container mx-auto px-6 py-20 text-center">
-    <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6" data-i18n="section1.title">
-      Level Up Your Coding Journey
-    </h1>
+    <!-- Logo/Mascota -->
+    <div class="mb-8 animate-bounce-slow">
+      <img
+        src="/level-up-cat-full.svg"
+        alt="Level Up Cat"
+        class="w-32 h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 mx-auto drop-shadow-2xl"
+      />
+    </div>
 
-    <p class="text-lg md:text-xl lg:text-2xl text-gray-200 max-w-3xl mx-auto mb-12" data-i18n="section1.subtitle">
-      Join weekly challenges, compete with peers, and climb the leaderboard
-    </p>
+    <HeroTitle
+      client:load
+      defaultText="Level Up Your Coding Journey"
+      i18nKey="section1.title"
+    />
+
+    <HeroSubtitle
+      client:load
+      defaultText="Join weekly challenges, compete with peers, and climb the leaderboard"
+      i18nKey="section1.subtitle"
+    />
 
     <!-- Formulario de email -->
     <div class="flex flex-col sm:flex-row items-center justify-center gap-4 max-w-2xl mx-auto">
-      <input
-        id="email-input"
-        type="email"
-        placeholder="Enter your email"
-        class="w-full sm:flex-1 px-6 py-4 bg-neutral-900/80 border border-neutral-700 rounded-lg text-white placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-red-600 focus:border-transparent"
-      />
-      <button
-        class="w-full sm:w-auto px-8 py-4 bg-red-600 hover:bg-red-700 text-white font-semibold rounded-lg transition-colors duration-200"
-        data-i18n="section1.button"
-      >
-        Join Now
-      </button>
+      <EmailInput client:load placeholder="Enter your email" />
+      <JoinButton client:load text="Join Now" data-i18n-btn="section1.button" />
     </div>
   </div>
 </section>
 
-<script>
-  import { ui } from '../i18n';
-
-  function updateTranslations() {
-    const lang = (localStorage.getItem('language') || 'es') as 'en' | 'es';
-    const elements = document.querySelectorAll('[data-i18n]');
-
-    elements.forEach((el) => {
-      const key = el.getAttribute('data-i18n');
-      if (!key) return;
-
-      const keys = key.split('.');
-      let value: any = ui[lang];
-
-      for (const k of keys) {
-        value = value?.[k];
-      }
-
-      if (value) {
-        el.textContent = value;
-      }
-    });
-
-    // Update placeholder
-    const emailInput = document.getElementById('email-input') as HTMLInputElement;
-    if (emailInput) {
-      emailInput.placeholder = ui[lang].section1.emailPlaceholder;
+<style>
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
     }
   }
 
-  document.addEventListener('DOMContentLoaded', updateTranslations);
-</script>
+  .animate-bounce-slow {
+    animation: float 3s ease-in-out infinite;
+  }
+</style>
