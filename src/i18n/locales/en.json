@@ -47,9 +47,9 @@
     "description": "To support students in staying motivated and progressing in their coding journey. Through interactive challenges, friendly competition, and a vibrant community, we make learning engaging and rewarding—helping every student grow with confidence and consistency."
   },
   "footer": {
-    "team": "Team",
+    "product": "Product",
+    "aboutTeam": "About the Team",
     "helpCenter": "Help Center",
-    "terms": "Terms",
     "privacy": "Privacy Policy"
   }
 }
