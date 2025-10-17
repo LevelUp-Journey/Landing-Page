@@ -5,7 +5,7 @@
     "account": "Account"
   },
   "section1": {
-    "title": "Level Up Your Coding C++ powers",
+    "title": "Level Up Your C++ powers",
     "subtitle": "The online challenge editor made for UPC juniors. Practice, compile, and level-up—right in your browser.",
     "emailPlaceholder": "Email Address",
     "button": "Sign up to the Journey"
@@ -47,9 +47,135 @@
     "description": "To support students in staying motivated and progressing in their coding journey. Through interactive challenges, friendly competition, and a vibrant community, we make learning engaging and rewarding—helping every student grow with confidence and consistency."
   },
   "footer": {
-    "team": "Team",
+    "product": "Product",
+    "aboutTeam": "About the Team",
     "helpCenter": "Help Center",
-    "terms": "Terms",
     "privacy": "Privacy Policy"
+  },
+  "product": {
+    "section1": {
+      "title": "The product",
+      "description": "Our platform is a dedicated code editor built for university students starting their journey into STEM. We know that many students struggle — and sometimes drop out — when faced with intimidating coding environments. That's why we designed an editor that is simple, supportive, and motivating from day one."
+    },
+    "section2": {
+      "description": "Students open a challenge, write their solution directly in the browser, and run it with one click. The editor gives instant feedback on errors and outputs, turning trial and error into a smooth learning experience. No setup, no distractions — just code, learn, and improve."
+    },
+    "section3": {
+      "description": "Every submission updates automatically — progress bars fill up, points are awarded, and rankings refresh in real time. Students can see their growth at a glance, celebrate milestones, and compare results with classmates. Learning becomes engaging, competitive, and fun."
+    },
+    "section5": {
+      "title": "Start Learning to Code",
+      "button": "Join Level Up Journey"
+    }
+  },
+  "helpCenter": {
+    "title": "Help Center",
+    "faq": {
+      "title": "FAQ",
+      "q1": {
+        "question": "1. What is this platform?",
+        "answer": "It's an online code editor built for university students. You can practice, solve challenges, and track your progress — all in one place."
+      },
+      "q2": {
+        "question": "2. Do I need to download or install something?",
+        "answer": "No. Everything works directly in your web browser. Just log in and start coding."
+      },
+      "q3": {
+        "question": "3. How much does it cost?",
+        "answer": "It's completely free. This is a university project designed to help students learn programming."
+      },
+      "q4": {
+        "question": "4. Which programming languages are supported?",
+        "answer": "Currently C++ and Python are available, with plans to expand to more languages in the future."
+      },
+      "q5": {
+        "question": "5. How does progress tracking work?",
+        "answer": "Each time you submit code, the system saves your results, awards points, and updates your personal progress and rankings automatically."
+      },
+      "q6": {
+        "question": "6. Who can see my work?",
+        "answer": "You: always. Your professors: for assignments and feedback. Classmates: only rankings/points (not your actual code)."
+      },
+      "q7": {
+        "question": "7. Is my data secure?",
+        "answer": "Yes. We only collect basic information (name, email, submissions). Your data is kept private and is not shared outside the university project."
+      },
+      "q8": {
+        "question": "8. Can teachers create activities?",
+        "answer": "Yes. We only collect basic information (name, email, submissions). Your data is kept private and is not shared outside the university project."
+      },
+      "q9": {
+        "question": "9. What happens if I find an error or bug?",
+        "answer": "Since this is a student project, there may be issues. Please let your professor or the dev team know so we can fix them quickly."
+      },
+      "q10": {
+        "question": "10. What makes this different from other code editors?",
+        "answer": "It's designed for learning, not for professionals. That means: Simple, distraction-free interface. Built-in university assignments. Instant feedback and rankings to keep you motivated."
+      }
+    },
+    "contact": {
+      "title": "Not what were you looking for?",
+      "subtitle": "Contact us through our channels",
+      "email": "Email:",
+      "phone": "Number:"
+    }
+  },
+  "about": {
+    "members": {
+      "title": "Our Team"
+    },
+    "description": "We’re building a code editor designed for university students, combining simplicity, performance, and learning-oriented features. Unlike generic editors, our platform integrates directly with coursework, weekly challenges, and real-time feedback — helping students not just code, but grow their skills in an engaging way.",
+    "mission": {
+      "title": "Our mission",
+      "description": "To help students overcome the fear of coding by providing a supportive, practical, and engaging learning environment. We aim to reduce dropout rates in STEM by turning coding into a skill that feels achievable and even fun."
+    },
+    "vision": {
+      "title": "Our vision",
+      "description": "To be the first stepping stone into coding for thousands of students — transforming fear into curiosity, confusion into confidence, and beginners into future innovators."
+    }
+  },
+  "privacyPolicy": {
+    "title": "Privacy Policy",
+    "sections": {
+      "1": {
+        "title": "1. About This Project",
+        "content": "This platform was created by students for students, as part of a university initiative. Our main goal is to help students learn coding in a safe and supportive environment."
+      },
+      "2": {
+        "title": "2. What Data We Collect",
+        "content": "We do not collect unnecessary personal data.",
+        "list": [
+          "Basic account info: name, email, and role (student/teacher).",
+          "Usage data: code submissions, progress, and scores.",
+          "Optional info: profile picture or avatar if you choose to add one."
+        ]
+      },
+      "3": {
+        "title": "3. How We Use Your Data",
+        "content": "We do not sell, rent, or share your data with outside companies.",
+        "list": [
+          "To allow you to log in and use the code editor.",
+          "To track your learning progress, points, and rankings.",
+          "To help teachers review student activity and give feedback.",
+          "To improve the platform based on how students use it."
+        ]
+      },
+      "4": {
+        "title": "4. Data Storage & Security",
+        "content": "All data is stored securely using university-approved tools. We do our best to protect your information, but remember this is a student project and not a commercial product."
+      },
+      "5": {
+        "title": "5. Your Rights",
+        "list": [
+          "You can request to delete your account or data anytime.",
+          "You can ask us what information we have stored about you.",
+          "You may stop using the platform at any time."
+        ]
+      },
+      "6": {
+        "title": "6. Contact",
+        "content": "If you have questions, issues, or concerns, please contact the student team behind the project or your course professor."
+      }
+    }
   }
 }

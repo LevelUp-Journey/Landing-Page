@@ -32,11 +32,6 @@
 }
 
 @layer components {
-  /* Consistent card styling */
-  .card {
-    @apply border border-gray-700 rounded-lg p-6 lg:p-8 hover:border-gray-600 transition-colors duration-200;
-  }
-
   /* Consistent section spacing */
   .section {
     @apply py-16 lg:py-20 px-6;

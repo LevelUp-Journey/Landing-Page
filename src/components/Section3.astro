@@ -1,5 +1,8 @@
 ---
-import LeaderboardTable from './LeaderboardTable.astro';
+import { Leaderboard } from './ui/Leaderboard';
+import { SectionTitle } from './ui/SectionTitle';
+import { Section3Subtitle } from './ui/Section3Subtitle';
+import { SectionDescription } from './ui/SectionDescription';
 ---
 
 <section class="section bg-neutral-950">
@@ -7,52 +10,35 @@ import LeaderboardTable from './LeaderboardTable.astro';
     <div class="grid lg:grid-cols-2 gap-12 items-center">
       <!-- Leaderboard Table -->
       <div class="order-2 lg:order-1">
-        <LeaderboardTable />
+        <Leaderboard
+          client:load
+          defaultRank="Rank"
+          defaultUser="User"
+          defaultScore="Score"
+          defaultChallenges="Retos"
+        />
       </div>
 
       <!-- Text Content -->
       <div class="order-1 lg:order-2 text-center flex flex-col justify-center h-full">
-        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4" data-i18n="section3.title">
-          Compete. Rank. Shine.
-        </h2>
-        <h3 class="text-xl font-semibold text-gray-300 mb-5" data-i18n="section3.subtitle">
-          Challenge your peers. Climb the ranks.
-        </h3>
-        <p class="text-white leading-relaxed text-sm max-w-2xl mx-auto" data-i18n="section3.description">
-          Join a community of students who share your passion for programming.
-          Each coding challenge is a chance to test your problem-solving skills,
-          earn points, and see how you stack up against others. With every victory,
-          you move higher on the leaderboard—driven by competition, collaboration,
-          and the pursuit of mastery.
-        </p>
+        <SectionTitle
+          client:load
+          defaultText="Compete. Rank. Shine."
+          i18nKey="section3.title"
+          className="text-3xl md:text-4xl"
+        />
+        <Section3Subtitle
+          client:load
+          defaultText="Challenge your peers. Climb the ranks."
+          i18nKey="section3.subtitle"
+        />
+        <SectionDescription
+          client:load
+          defaultText="Join a community of students who share your passion for programming. Each coding challenge is a chance to test your problem-solving skills, earn points, and see how you stack up against others. With every victory, you move higher on the leaderboard—driven by competition, collaboration, and the pursuit of mastery."
+          i18nKey="section3.description"
+          className="text-sm max-w-2xl mx-auto"
+        />
       </div>
     </div>
   </div>
 </section>
-
-<script>
-  import { ui } from '../i18n';
-
-  function updateTranslations() {
-    const lang = (localStorage.getItem('language') || 'es') as 'en' | 'es';
-    const elements = document.querySelectorAll('[data-i18n]');
-
-    elements.forEach((el) => {
-      const key = el.getAttribute('data-i18n');
-      if (!key) return;
-
-      const keys = key.split('.');
-      let value: any = ui[lang];
-
-      for (const k of keys) {
-        value = value?.[k];
-      }
-
-      if (value) {
-        el.textContent = value;
-      }
-    });
-  }
-
-  document.addEventListener('DOMContentLoaded', updateTranslations);
-</script>

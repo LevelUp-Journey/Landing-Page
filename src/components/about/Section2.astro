@@ -1,0 +1,33 @@
+---
+import {
+  TypographyH2,
+  TypographyP,
+  TypographyH3,
+  TypographyLead,
+} from '../ui/typography.tsx';
+---
+
+<section class="section bg-neutral-900 py-20">
+  <div class="container-custom">
+    <div class="grid lg:grid-cols-2 gap-8">
+      <div class="text-center px-6">
+        <TypographyH2 className="text-white mb-6" data-i18n="about.mission.title">Our mission</TypographyH2>
+        <TypographyP className="text-gray-300 max-w-xl mx-auto" data-i18n="about.mission.description">
+          To help students overcome the fear of coding by providing a supportive,
+          practical, and engaging learning environment. We aim to reduce dropout
+          rates in STEM by turning coding into a skill that feels achievable and
+          even fun.
+        </TypographyP>
+      </div>
+
+      <div class="text-center px-6">
+        <TypographyH2 className="text-white mb-6" data-i18n="about.vision.title">Our vision</TypographyH2>
+        <TypographyP className="text-gray-300 max-w-xl mx-auto" data-i18n="about.vision.description">
+          To be the first stepping stone into coding for thousands of students —
+          transforming fear into curiosity, confusion into confidence, and
+          beginners into future innovators.
+        </TypographyP>
+      </div>
+    </div>
+  </div>
+</section>

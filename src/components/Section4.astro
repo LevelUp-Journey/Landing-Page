@@ -1,47 +1,28 @@
 ---
+import { SectionTitle } from './ui/SectionTitle';
+import { SectionSubtitle } from './ui/SectionSubtitle';
+import { CTAButton } from './ui/CTAButton';
 ---
 
 <section class="section bg-neutral-900">
   <div class="container-custom text-center">
-    <h2 class="text-4xl md:text-5xl font-bold text-white mb-6" data-i18n="section4.title">
-      Start Learning to Code
-    </h2>
-    <p class="text-xl text-gray-400 mb-8" data-i18n="section4.subtitle">
-      Practice, compete, and rise through real coding challenges.
-    </p>
-    <a
+    <SectionTitle
+      client:load
+      defaultText="Start Learning to Code"
+      i18nKey="section4.title"
+      className="mb-6"
+    />
+    <SectionSubtitle
+      client:load
+      defaultText="Practice, compete, and rise through real coding challenges."
+      i18nKey="section4.subtitle"
+      className="mb-8"
+    />
+    <CTAButton
+      client:load
+      defaultText="Join Level Up Journey"
+      i18nKey="section4.button"
       href="#"
-      class="inline-block bg-red-600 hover:bg-red-700 text-white font-semibold px-8 py-3 rounded-lg transition-colors duration-200"
-      data-i18n="section4.button"
-    >
-      Join Level Up Journey
-    </a>
+    />
   </div>
 </section>
-
-<script>
-  import { ui } from '../i18n';
-
-  function updateTranslations() {
-    const lang = (localStorage.getItem('language') || 'es') as 'en' | 'es';
-    const elements = document.querySelectorAll('[data-i18n]');
-
-    elements.forEach((el) => {
-      const key = el.getAttribute('data-i18n');
-      if (!key) return;
-
-      const keys = key.split('.');
-      let value: any = ui[lang];
-
-      for (const k of keys) {
-        value = value?.[k];
-      }
-
-      if (value) {
-        el.textContent = value;
-      }
-    });
-  }
-
-  document.addEventListener('DOMContentLoaded', updateTranslations);
-</script>

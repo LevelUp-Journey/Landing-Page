@@ -1,0 +1,59 @@
+---
+import '../styles/global.css';
+import '../styles/globals.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import HelpCenterHero from '../components/help-center/HelpCenterHero.astro';
+import FAQSection from '../components/help-center/FAQSection.astro';
+import ContactSection from '../components/help-center/ContactSection.astro';
+---
+
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/level-up-cat-happy.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Help Center - Level Up Journey</title>
+  </head>
+  <body class="bg-neutral-950 text-white">
+    <Header />
+    <main class="min-h-screen">
+      <HelpCenterHero />
+      <FAQSection />
+      <ContactSection />
+    </main>
+    <Footer />
+
+    <script>
+      import { ui } from '../i18n';
+
+      function updateTranslations() {
+        const lang = (localStorage.getItem('language') || 'es') as 'en' | 'es';
+        const elements = document.querySelectorAll('[data-i18n]');
+
+        elements.forEach((el) => {
+          const key = el.getAttribute('data-i18n');
+          if (!key) return;
+
+          const keys = key.split('.');
+          let value: any = ui[lang];
+
+          for (const k of keys) {
+            value = value?.[k];
+          }
+
+          if (value) {
+            el.textContent = value;
+          }
+        });
+      }
+
+      document.addEventListener('DOMContentLoaded', updateTranslations);
+      document.addEventListener('astro:after-swap', updateTranslations);
+
+      // Listen for language changes
+      window.addEventListener('languageChanged', updateTranslations);
+    </script>
+  </body>
+</html>
