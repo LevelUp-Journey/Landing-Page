@@ -1,6 +1,7 @@
 ---
 // Header component
 import LanguageDropdown from './Header/LanguageDropdown.astro';
+import MobileMenu from './Header/MobileMenu.astro';
 import Title from './Title.astro';
 import TranslatedText from './TranslatedText.astro';
 import './Header/header.css';
@@ -14,10 +15,10 @@ import './Header/header.css';
         <Title />
       </a>
 
-      <!-- Navegación e iconos a la derecha -->
-      <div class="flex items-center gap-8">
+      <!-- Navegación e iconos a la derecha (desktop) -->
+      <div class="hidden md:flex items-center gap-8">
         <!-- Navegación principal -->
-        <nav class="hidden md:flex items-center gap-6">
+        <nav class="flex items-center gap-6">
           <a href="/product" class="text-white hover:text-gray-300 transition-colors text-sm">
             <TranslatedText keyPath="footer.product" />
           </a>
@@ -47,6 +48,9 @@ import './Header/header.css';
           </button>
         </div>
       </div>
+
+      <!-- Menú hamburguesa (mobile) -->
+      <MobileMenu />
     </div>
   </div>
 </header>
