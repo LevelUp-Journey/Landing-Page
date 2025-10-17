@@ -3,18 +3,18 @@
 import TranslatedText from '../TranslatedText.astro';
 ---
 
-<!-- Botón hamburguesa -->
+<!-- Hamburger button -->
 <button
   id="mobile-menu-button"
   class="md:hidden text-white hover:opacity-80 transition-opacity"
-  aria-label="Abrir menú"
+  aria-label="Open menu"
 >
   <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
   </svg>
 </button>
 
-<!-- Menú móvil desplegable -->
+<!-- Mobile menu dropdown -->
 <div id="mobile-menu" class="mobile-menu md:hidden bg-neutral-900 border-t border-gray-800 absolute left-0 right-0 top-full overflow-hidden max-h-0 opacity-0 transition-all duration-300 ease-in-out">
   <div class="container mx-auto px-6 py-4">
     <nav class="flex flex-col gap-4">
@@ -31,7 +31,7 @@ import TranslatedText from '../TranslatedText.astro';
       </a>
       <div class="border-t border-gray-800"></div>
       
-      <!-- Opciones de idioma -->
+      <!-- Language options -->
       <div class="py-2">
         <p class="text-gray-400 text-sm mb-2">Language / Idioma</p>
         <div class="flex flex-col gap-2">
@@ -45,7 +45,7 @@ import TranslatedText from '../TranslatedText.astro';
       </div>
       <div class="border-t border-gray-800"></div>
       
-      <!-- Botón de cuenta móvil -->
+      <!-- Mobile account button -->
       <button class="flex items-center gap-3 text-white hover:text-gray-300 transition-colors py-2">
         <span>Account</span>
       </button>
