@@ -24,9 +24,40 @@ import ProductSection5 from '../components/product/Section5.astro';
       <ProductSection1 />
       <ProductSection2 />
       <ProductSection3 />
-  <ProductSection4 />
+      <ProductSection4 />
       <ProductSection5 />
     </main>
     <Footer />
+
+    <script>
+      import { ui } from '../i18n';
+
+      function updateTranslations() {
+        const lang = (localStorage.getItem('language') || 'es') as 'en' | 'es';
+        const elements = document.querySelectorAll('[data-i18n]');
+
+        elements.forEach((el) => {
+          const key = el.getAttribute('data-i18n');
+          if (!key) return;
+
+          const keys = key.split('.');
+          let value: any = ui[lang];
+
+          for (const k of keys) {
+            value = value?.[k];
+          }
+
+          if (value) {
+            el.textContent = value;
+          }
+        });
+      }
+
+      document.addEventListener('DOMContentLoaded', updateTranslations);
+      document.addEventListener('astro:after-swap', updateTranslations);
+
+      // Listen for language changes
+      window.addEventListener('languageChanged', updateTranslations);
+    </script>
   </body>
 </html>

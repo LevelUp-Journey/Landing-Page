@@ -52,6 +52,22 @@
     "helpCenter": "Centro de ayuda",
     "privacy": "Política de privacidad"
   },
+  "product": {
+    "section1": {
+      "title": "El producto",
+      "description": "Nuestra plataforma es un editor de código dedicado creado para estudiantes universitarios que comienzan su camino en STEM. Sabemos que muchos estudiantes tienen dificultades — y a veces abandonan — cuando se enfrentan a entornos de programación intimidantes. Por eso diseñamos un editor que es simple, de apoyo y motivador desde el primer día."
+    },
+    "section2": {
+      "description": "Los estudiantes abren un desafío, escriben su solución directamente en el navegador y la ejecutan con un clic. El editor brinda retroalimentación instantánea sobre errores y resultados, convirtiendo el ensayo y error en una experiencia de aprendizaje fluida. Sin configuración, sin distracciones — solo código, aprendizaje y mejora."
+    },
+    "section3": {
+      "description": "Cada envío se actualiza automáticamente — las barras de progreso se llenan, se otorgan puntos y los rankings se actualizan en tiempo real. Los estudiantes pueden ver su crecimiento de un vistazo, celebrar hitos y comparar resultados con compañeros. El aprendizaje se vuelve atractivo, competitivo y divertido."
+    },
+    "section5": {
+      "title": "Comienza a aprender a programar",
+      "button": "Únete a Level Up Journey"
+    }
+  },
   "helpCenter": {
     "title": "Centro de Ayuda",
     "faq": {
