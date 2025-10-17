@@ -25,7 +25,7 @@ export function EmailInput({ placeholder }: EmailInputProps) {
     <Input
       type="email"
       placeholder={placeholderText}
-      className="w-full sm:flex-1 h-14 px-8 py-4 text-lg bg-neutral-900/80 border-neutral-700 text-white placeholder:text-gray-400 focus-visible:ring-red-600 focus-visible:border-transparent"
+      className="w-full sm:flex-1 px-8 bg-neutral-900/80 border-neutral-700 text-white placeholder:text-gray-400 focus-visible:ring-red-600 focus-visible:border-transparent"
     />
   );
 }

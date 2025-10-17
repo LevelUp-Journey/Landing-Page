@@ -25,7 +25,7 @@ export function JoinButton({ text }: JoinButtonProps) {
   return (
     <Button
       size="lg"
-      className="w-full sm:w-auto h-14 px-10 py-4 text-lg font-semibold bg-red-600 hover:bg-red-700 text-white"
+      className="w-full sm:w-auto font-semibold bg-red-600 hover:bg-red-700 text-white"
     >
       {buttonText}
     </Button>

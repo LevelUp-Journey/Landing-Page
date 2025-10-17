@@ -1,4 +1,5 @@
 import { Card, CardContent } from "./card";
+import { TypographyH3, TypographyP } from "./typography";
 import { useEffect, useState } from "react";
 
 interface FeatureCardProps {
@@ -51,13 +52,13 @@ export function FeatureCard({
       <CardContent className="p-6">
         <div className="flex items-center gap-4 mb-4">
           <img src={icon} alt={title} className="w-5 h-5" />
-          <h3 className="text-2xl font-bold text-white">
+          <TypographyH3 className="text-white">
             {title}
-          </h3>
+          </TypographyH3>
         </div>
-        <p className="text-gray-400 leading-relaxed">
+        <TypographyP className="text-gray-400 leading-relaxed [&:not(:first-child)]:mt-0">
           {description}
-        </p>
+        </TypographyP>
       </CardContent>
     </Card>
   );
