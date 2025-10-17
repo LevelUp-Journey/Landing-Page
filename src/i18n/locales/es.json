@@ -51,5 +51,73 @@
     "aboutTeam": "Sobre el equipo",
     "helpCenter": "Centro de ayuda",
     "privacy": "Política de privacidad"
+  },
+  "product": {
+    "section1": {
+      "title": "El producto",
+      "description": "Nuestra plataforma es un editor de código dedicado creado para estudiantes universitarios que comienzan su camino en STEM. Sabemos que muchos estudiantes tienen dificultades — y a veces abandonan — cuando se enfrentan a entornos de programación intimidantes. Por eso diseñamos un editor que es simple, de apoyo y motivador desde el primer día."
+    },
+    "section2": {
+      "description": "Los estudiantes abren un desafío, escriben su solución directamente en el navegador y la ejecutan con un clic. El editor brinda retroalimentación instantánea sobre errores y resultados, convirtiendo el ensayo y error en una experiencia de aprendizaje fluida. Sin configuración, sin distracciones — solo código, aprendizaje y mejora."
+    },
+    "section3": {
+      "description": "Cada envío se actualiza automáticamente — las barras de progreso se llenan, se otorgan puntos y los rankings se actualizan en tiempo real. Los estudiantes pueden ver su crecimiento de un vistazo, celebrar hitos y comparar resultados con compañeros. El aprendizaje se vuelve atractivo, competitivo y divertido."
+    },
+    "section5": {
+      "title": "Comienza a aprender a programar",
+      "button": "Únete a Level Up Journey"
+    }
+  },
+  "helpCenter": {
+    "title": "Centro de Ayuda",
+    "faq": {
+      "title": "FAQ",
+      "q1": {
+        "question": "1. ¿Qué es esta plataforma?",
+        "answer": "Es un editor de código en línea creado para estudiantes universitarios. Puedes practicar, resolver desafíos y seguir tu progreso, todo en un solo lugar."
+      },
+      "q2": {
+        "question": "2. ¿Necesito descargar o instalar algo?",
+        "answer": "No. Todo funciona directamente en tu navegador web. Solo inicia sesión y comienza a programar."
+      },
+      "q3": {
+        "question": "3. ¿Cuánto cuesta?",
+        "answer": "Es completamente gratis. Este es un proyecto universitario diseñado para ayudar a los estudiantes a aprender programación."
+      },
+      "q4": {
+        "question": "4. ¿Qué lenguajes de programación están soportados?",
+        "answer": "Actualmente C++ y Python están disponibles, con planes de expandir a más lenguajes en el futuro."
+      },
+      "q5": {
+        "question": "5. ¿Cómo funciona el seguimiento de progreso?",
+        "answer": "Cada vez que envías código, el sistema guarda tus resultados, otorga puntos y actualiza tu progreso personal y rankings automáticamente."
+      },
+      "q6": {
+        "question": "6. ¿Quién puede ver mi trabajo?",
+        "answer": "Tú: siempre. Tus profesores: para tareas y retroalimentación. Compañeros de clase: solo rankings/puntos (no tu código real)."
+      },
+      "q7": {
+        "question": "7. ¿Mis datos están seguros?",
+        "answer": "Sí. Solo recopilamos información básica (nombre, correo electrónico, envíos). Tus datos se mantienen privados y no se comparten fuera del proyecto universitario."
+      },
+      "q8": {
+        "question": "8. ¿Los profesores pueden crear actividades?",
+        "answer": "Sí. Solo recopilamos información básica (nombre, correo electrónico, envíos). Tus datos se mantienen privados y no se comparten fuera del proyecto universitario."
+      },
+      "q9": {
+        "question": "9. ¿Qué pasa si encuentro un error o bug?",
+        "answer": "Como este es un proyecto estudiantil, puede haber problemas. Por favor, informa a tu profesor o al equipo de desarrollo para que podamos solucionarlos rápidamente."
+      },
+      "q10": {
+        "question": "10. ¿Qué hace esto diferente de otros editores de código?",
+        "answer": "Está diseñado para aprender, no para profesionales. Eso significa: Interfaz simple y sin distracciones. Tareas universitarias integradas. Retroalimentación instantánea y rankings para mantenerte motivado."
+      }
+    },
+    "contact": {
+      "title": "¿No es lo que estabas buscando?",
+      "subtitle": "Contáctanos a través de nuestros canales",
+      "email": "Correo:",
+      "phone": "Número:"
+    }
   }
 }

@@ -51,5 +51,73 @@
     "aboutTeam": "About the Team",
     "helpCenter": "Help Center",
     "privacy": "Privacy Policy"
+  },
+  "product": {
+    "section1": {
+      "title": "The product",
+      "description": "Our platform is a dedicated code editor built for university students starting their journey into STEM. We know that many students struggle — and sometimes drop out — when faced with intimidating coding environments. That's why we designed an editor that is simple, supportive, and motivating from day one."
+    },
+    "section2": {
+      "description": "Students open a challenge, write their solution directly in the browser, and run it with one click. The editor gives instant feedback on errors and outputs, turning trial and error into a smooth learning experience. No setup, no distractions — just code, learn, and improve."
+    },
+    "section3": {
+      "description": "Every submission updates automatically — progress bars fill up, points are awarded, and rankings refresh in real time. Students can see their growth at a glance, celebrate milestones, and compare results with classmates. Learning becomes engaging, competitive, and fun."
+    },
+    "section5": {
+      "title": "Start Learning to Code",
+      "button": "Join Level Up Journey"
+    }
+  },
+  "helpCenter": {
+    "title": "Help Center",
+    "faq": {
+      "title": "FAQ",
+      "q1": {
+        "question": "1. What is this platform?",
+        "answer": "It's an online code editor built for university students. You can practice, solve challenges, and track your progress — all in one place."
+      },
+      "q2": {
+        "question": "2. Do I need to download or install something?",
+        "answer": "No. Everything works directly in your web browser. Just log in and start coding."
+      },
+      "q3": {
+        "question": "3. How much does it cost?",
+        "answer": "It's completely free. This is a university project designed to help students learn programming."
+      },
+      "q4": {
+        "question": "4. Which programming languages are supported?",
+        "answer": "Currently C++ and Python are available, with plans to expand to more languages in the future."
+      },
+      "q5": {
+        "question": "5. How does progress tracking work?",
+        "answer": "Each time you submit code, the system saves your results, awards points, and updates your personal progress and rankings automatically."
+      },
+      "q6": {
+        "question": "6. Who can see my work?",
+        "answer": "You: always. Your professors: for assignments and feedback. Classmates: only rankings/points (not your actual code)."
+      },
+      "q7": {
+        "question": "7. Is my data secure?",
+        "answer": "Yes. We only collect basic information (name, email, submissions). Your data is kept private and is not shared outside the university project."
+      },
+      "q8": {
+        "question": "8. Can teachers create activities?",
+        "answer": "Yes. We only collect basic information (name, email, submissions). Your data is kept private and is not shared outside the university project."
+      },
+      "q9": {
+        "question": "9. What happens if I find an error or bug?",
+        "answer": "Since this is a student project, there may be issues. Please let your professor or the dev team know so we can fix them quickly."
+      },
+      "q10": {
+        "question": "10. What makes this different from other code editors?",
+        "answer": "It's designed for learning, not for professionals. That means: Simple, distraction-free interface. Built-in university assignments. Instant feedback and rankings to keep you motivated."
+      }
+    },
+    "contact": {
+      "title": "Not what were you looking for?",
+      "subtitle": "Contact us through our channels",
+      "email": "Email:",
+      "phone": "Number:"
+    }
   }
 }
