@@ -1,3 +1,32 @@
 ---
-return Astro.redirect('/');
+import '../styles/global.css';
+import '../styles/globals.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import ProductSection1 from '../components/product/Section1.astro';
+import ProductSection2 from '../components/product/Section2.astro';
+import ProductSection3 from '../components/product/Section3.astro';
+import ProductSection4 from '../components/product/Section4.astro';
+import ProductSection5 from '../components/product/Section5.astro';
 ---
+
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/level-up-cat-happy.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Product - LevelUp Journey</title>
+  </head>
+  <body class="bg-neutral-950 text-white">
+    <Header />
+    <main>
+      <ProductSection1 />
+      <ProductSection2 />
+      <ProductSection3 />
+  <ProductSection4 />
+      <ProductSection5 />
+    </main>
+    <Footer />
+  </body>
+</html>
