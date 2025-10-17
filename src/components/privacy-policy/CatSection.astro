@@ -1,0 +1,20 @@
+---
+// Cat Section Component
+---
+
+<section class="bg-[#020202] px-6 flex items-center justify-center min-h-[20vh] animate-bg-change">
+  <div class="max-w-4xl mx-auto">
+    <img src="/level-up-cat-walking.gif" alt="Level Up Cat Walking" class="w-32 mx-auto" />
+  </div>
+</section>
+
+<style>
+  @keyframes bg-change {
+    0% { background-color: #020202; }
+    100% { background-color: #060602; }
+  }
+
+  .animate-bg-change {
+    animation: bg-change 3s infinite alternate;
+  }
+</style>

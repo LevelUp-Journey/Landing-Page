@@ -2,6 +2,7 @@
 // Header component
 import LanguageDropdown from './Header/LanguageDropdown.astro';
 import Title from './Title.astro';
+import TranslatedText from './TranslatedText.astro';
 import './Header/header.css';
 ---
 
@@ -13,20 +14,38 @@ import './Header/header.css';
         <Title />
       </a>
 
-      <!-- Iconos de navegación -->
-      <div class="flex items-center gap-6">
-        <LanguageDropdown />
+      <!-- Navegación e iconos a la derecha -->
+      <div class="flex items-center gap-8">
+        <!-- Navegación principal -->
+        <nav class="hidden md:flex items-center gap-6">
+          <a href="/product" class="text-white hover:text-gray-300 transition-colors text-sm">
+            <TranslatedText keyPath="footer.product" />
+          </a>
+          <span class="text-gray-500">|</span>
+          <a href="/about-team" class="text-white hover:text-gray-300 transition-colors text-sm">
+            <TranslatedText keyPath="footer.aboutTeam" />
+          </a>
+          <span class="text-gray-500">|</span>
+          <a href="/help-center" class="text-white hover:text-gray-300 transition-colors text-sm">
+            <TranslatedText keyPath="footer.helpCenter" />
+          </a>
+        </nav>
 
-        <button
-          class="hover:opacity-80 transition-opacity"
-          aria-label="Cuenta de usuario"
-        >
-          <img
-            src="/assets/header/account.svg"
-            alt="Cuenta"
-            class="w-7 h-7"
-          />
-        </button>
+        <!-- Iconos de navegación -->
+        <div class="flex items-center gap-6">
+          <LanguageDropdown />
+
+          <button
+            class="hover:opacity-80 transition-opacity"
+            aria-label="Cuenta de usuario"
+          >
+            <img
+              src="/assets/header/account.svg"
+              alt="Cuenta"
+              class="w-7 h-7"
+            />
+          </button>
+        </div>
       </div>
     </div>
   </div>
