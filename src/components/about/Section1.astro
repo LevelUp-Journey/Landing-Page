@@ -4,30 +4,29 @@ import {
   TypographyP,
   TypographyLead,
 } from '../ui/typography.tsx';
+import { Members } from '../ui/Members.tsx';
 ---
 
-<section class="section bg-neutral-950 pt-20 pb-24">
-  <div class="container-custom">
+<section class="section bg-neutral-950 min-h-screen flex items-center justify-center">
+    <div class="container-custom text-center">
     <div class="text-center mb-12">
-      <TypographyH1 className="text-white">Meet our Team</TypographyH1>
+      <TypographyH1 className="text-white" data-i18n="about.members.title">Our Team</TypographyH1>
     </div>
 
-    <div class="grid lg:grid-cols-2 gap-12 items-center">
-      <!-- Left: image placeholder - user should add image to public/images/about-team-hero.png -->
-      <div>
-        <div class="bg-white rounded-xl h-80 w-full shadow-lg"></div>
-      </div>
+    <!-- Team members -->
+    <div class="mb-12 max-w-4xl mx-auto">
+      <Members client:load />
+    </div>
 
-      <!-- Right: description -->
-      <div>
-        <TypographyP className="text-gray-300">
-          We’re building a code editor designed for university students, combining
-          simplicity, performance, and learning-oriented features. Unlike generic
-          editors, our platform integrates directly with coursework, weekly
-          challenges, and real-time feedback — helping students not just code,
-          but grow their skills in an engaging way.
-        </TypographyP>
-      </div>
+    <!-- Description -->
+    <div class="text-center max-w-2xl mx-auto">
+      <TypographyP className="text-gray-300">
+        We’re building a code editor designed for university students, combining
+        simplicity, performance, and learning-oriented features. Unlike generic
+        editors, our platform integrates directly with coursework, weekly
+        challenges, and real-time feedback — helping students not just code,
+        but grow their skills in an engaging way.
+      </TypographyP>
     </div>
   </div>
 </section>

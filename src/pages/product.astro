@@ -18,18 +18,16 @@ import ProductSection5 from '../components/product/Section5.astro';
     <meta name="generator" content={Astro.generator} />
     <title>Product - LevelUp Journey</title>
   </head>
-  <body class="bg-neutral-950 text-white">
-    <Header />
-    <main>
-      <ProductSection1 />
-      <ProductSection2 />
-      <ProductSection3 />
-      <ProductSection4 />
-      <ProductSection5 />
-    </main>
-    <Footer />
-
-    <script>
+	<body class="bg-neutral-950 text-white min-h-screen flex flex-col">
+		<Header />
+		<main class="flex-1">
+			<ProductSection1 />
+			<ProductSection2 />
+			<ProductSection3 />
+			<ProductSection4 />
+			<ProductSection5 />
+		</main>
+		<Footer />    <script>
       import { ui } from '../i18n';
 
       function updateTranslations() {
