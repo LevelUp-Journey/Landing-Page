@@ -1,0 +1,9 @@
+#main-header {
+  background: transparent;
+}
+
+#main-header.scrolled {
+  background: rgba(23, 23, 23, 0.95);
+  border-bottom-color: rgba(38, 38, 38, 0.5);
+  backdrop-filter: blur(12px);
+}
